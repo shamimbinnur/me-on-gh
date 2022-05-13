@@ -27,7 +27,7 @@ const Home: NextPage<HomePageProps> = ({ homePageStaticData: { seo } }) => {
         <meta property="og:url" content={seo.url} />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.metaDesc} />
-        <meta property="og:image" content={seo.image as unknown as string} />
+        <meta property="og:image" content={seo.image} />
 
         {/* <!-- Twitter --> */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -36,6 +36,8 @@ const Home: NextPage<HomePageProps> = ({ homePageStaticData: { seo } }) => {
         <meta property="twitter:description" content={seo.metaDesc} />
         <meta property="twitter:image" content={seo.image} />
       </Head>
+
+      <h1 className=' text-center text-4xl ' >Me On Gh is comming soon!</h1>
 
 
     </div>
