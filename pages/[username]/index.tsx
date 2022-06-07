@@ -45,10 +45,9 @@ const App: NextPage<AppProps> = ({ homePageStaticData: { seo } }) => {
 export default App
 
 
-export async function getStaticProps() {
-    return {
-      props: {
-        homePageStaticData : homePageSaticData
-      },
-    }
+export async function getServerSideProps() {
+
+  return { props: {
+    homePageStaticData : homePageSaticData
+  } }
 }
