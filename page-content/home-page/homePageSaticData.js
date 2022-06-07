@@ -7,4 +7,4 @@ const homePageSaticData = {
     }
 }
 
-export { homePageSaticData }
+export { homePageStaicData }
