@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { Head } from 'next/document'
+import Head from 'next/head'
 import React from 'react'
 import { homePageStaticData } from '../../page-content/home-page/homePageStaticData'
 
@@ -8,7 +8,7 @@ import { homePageStaticData } from '../../page-content/home-page/homePageStaticD
 const App: NextPage= () => {
   return (
     <div>
-        <Head>
+      <Head>
         <title>{homePageStaticData.seo.title}</title>
         <meta name="description" content={homePageStaticData.seo.metaDesc} />
         <link rel="icon" href="/favicon.ico" />
@@ -27,6 +27,7 @@ const App: NextPage= () => {
         <meta property="twitter:description" content={homePageStaticData.seo.metaDesc} />
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
+
     </div>
   )
 }
