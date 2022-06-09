@@ -1,19 +1,29 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { homePageStaticData } from '../../page-content/home-page/homePageStaticData'
-import { getProfile } from '../../github/useGitHubApi'
+import { getProfile } from '../../github/GitHubApi'
 import { useQuery } from 'react-query'
+import { useRouter } from 'next/router'
+
 
 
 
 const App: NextPage= () => {
-  const { isLoading, error, data } = useQuery('profileData', ()=> getProfile("shamimbinnur"))
+  const {query, isReady} = useRouter()
+  const [username, setUsername] = useState("")
+  const { isLoading, error, data } = useQuery(['profileData', username] , ()=> getProfile(username));
+  
+
+  
+  
 
   useEffect(() => {
+    if (!isReady) return
+    setUsername(query.username as string)
     
     
-  }, [])
+  }, [isReady])
   
 
   return (

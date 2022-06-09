@@ -2,6 +2,8 @@ import axios from "axios";
 
 
 const getProfile = async (username: string) => {
+    if(username == undefined || username == "") return
+    
     const { data } = await axios.get(`https://api.github.com/users/${username}`)
     console.log("getProfile has been called")
     console.log(data)
