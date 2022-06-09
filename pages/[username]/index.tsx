@@ -1,11 +1,21 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { homePageStaticData } from '../../page-content/home-page/homePageStaticData'
+import { getProfile } from '../../github/useGitHubApi'
+import { useQuery } from 'react-query'
 
 
 
 const App: NextPage= () => {
+  const { isLoading, error, data } = useQuery('profileData', ()=> getProfile("shamimbinnur"))
+
+  useEffect(() => {
+    
+    
+  }, [])
+  
+
   return (
     <div>
       <Head>
