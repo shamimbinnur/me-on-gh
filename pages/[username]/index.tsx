@@ -12,7 +12,9 @@ import { useRouter } from 'next/router'
 const App: NextPage= () => {
   const {query, isReady} = useRouter()
   const [username, setUsername] = useState("")
-  const { isLoading, error, data } = useQuery(['profileData', username] , ()=> getProfile(username));
+  const { isLoading, error, data } = useQuery(['profileData', username] , ()=> getProfile(username),{
+    staleTime: Infinity
+  });
   
 
   
@@ -48,6 +50,9 @@ const App: NextPage= () => {
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
 
+      {
+        JSON.stringify(data)
+      }
     </div>
   )
 }
