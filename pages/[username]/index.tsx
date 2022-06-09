@@ -1,11 +1,33 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { homePageStaticData } from '../../page-content/home-page/homePageStaticData'
+import { getProfile } from '../../github/gitHubApi'
+import { useQuery } from 'react-query'
+import { useRouter } from 'next/router'
+
 
 
 
 const App: NextPage= () => {
+  const {query, isReady} = useRouter()
+  const [username, setUsername] = useState("")
+  const { isLoading, error, data } = useQuery(['profileData', username] , ()=> getProfile(username),{
+    staleTime: Infinity
+  });
+  
+
+  
+  
+
+  useEffect(() => {
+    if (!isReady) return
+    setUsername(query.username as string)
+    
+    
+  }, [isReady])
+  
+
   return (
     <div>
       <Head>
@@ -28,6 +50,9 @@ const App: NextPage= () => {
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
 
+      {
+        JSON.stringify(data)
+      }
     </div>
   )
 }
