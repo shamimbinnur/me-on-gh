@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
 import { homePageStaticData } from '../../page-content/home-page/homePageStaticData'
-import { getProfile } from '../../github/GitHubApi'
+import { getProfile } from '../../github/gitHubApi'
 import { useQuery } from 'react-query'
 import { useRouter } from 'next/router'
 
