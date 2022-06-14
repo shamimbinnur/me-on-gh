@@ -6,7 +6,12 @@ import deco from '../public/svg/deco.svg'
 import Link from 'next/link'
 
 interface HeaderProps{
-    navs: []
+    navs: [
+        {
+            placeholder: string
+            link: string
+        }
+    ]
 }
 
 const Header:FC<HeaderProps> = ({navs}) => {

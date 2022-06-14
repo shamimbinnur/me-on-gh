@@ -29,7 +29,7 @@ const Home: NextPage = () => {
       </Head>
 
       <div className='py-[20px]'>
-        <Header navs={homePageStaticData.headerNav || []} />
+        <Header navs={homePageStaticData.headerNav as [] || []} />
       </div>
 
 
