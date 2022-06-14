@@ -3,6 +3,13 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
 
+type navs= [
+    {
+      placeholder: string
+      link: string
+    }
+]
+
 
 const Home: NextPage = () => {
 
@@ -29,7 +36,7 @@ const Home: NextPage = () => {
       </Head>
 
       <div className='py-[20px]'>
-        <Header navs={homePageStaticData.headerNav as [] || []} />
+        <Header navs={homePageStaticData.headerNav as navs || []} />
       </div>
 
 

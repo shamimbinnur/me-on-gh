@@ -18,13 +18,13 @@ const Header:FC<HeaderProps> = ({navs}) => {
   return (
     <div className='relative max-w-2xl mx-auto'>
         <div className='absolute top-[-760px] left-[-440px] scale-[1] ' >
-           <Image src={deco}/>
+           <Image src={deco} alt={"deco vector graphic"}/>
         </div>
         
         <div className='flex items-center justify-between  '>
             <div className='flex gap-[15px] items-center '>
-                <Image src={MOG} width={60} height={60} />
-                <Image src={MOG_text} width={160} height={60} />
+                <Image src={MOG} width={60} height={60} alt="MOG Logo" />
+                <Image src={MOG_text} width={160} height={60} alt="MOG Logo" />
 
             </div>
 
@@ -32,7 +32,7 @@ const Header:FC<HeaderProps> = ({navs}) => {
                 <ul className='flex text-[15px] gap-[20px] tracking-tight text-grayMOG'>
                     {
                         navs.map( nav => (
-                            <li> <Link href={nav.link}><a>{nav.placeholder}</a></Link> </li>
+                            <li key={nav.link}> <Link href={nav.link}><a>{nav.placeholder}</a></Link> </li>
                         ))
                     }
                 </ul>
