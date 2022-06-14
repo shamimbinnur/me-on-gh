@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Header from '../components/Header'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
 
 
 const Home: NextPage = () => {
-  console.log(homePageStaticData)
+
   return (
     <div>
       <Head>
@@ -27,7 +28,9 @@ const Home: NextPage = () => {
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
 
-      <h1 className=' font-primary text-center text-4xl ' >Me On Gh is comming soon!</h1>
+      <div className='py-[20px]'>
+        <Header navs={homePageStaticData.headerNav || []} />
+      </div>
 
 
     </div>
