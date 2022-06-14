@@ -26,7 +26,7 @@ const Home: NextPage = () => {
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
 
-      <h1 className=' text-center text-4xl ' >Me On Gh is comming soon!</h1>
+      <h1 className=' font-primary text-center text-4xl ' >Me On Gh is comming soon!</h1>
 
 
     </div>
