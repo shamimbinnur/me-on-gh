@@ -5,19 +5,45 @@ const homePageStaticData = {
         url: "localhost",
         image: ""
     },
-    headerNav:[
+    headerNav: [
+        {   
+            placeholder: "About",
+            link: "#"
+        },
         {
-            about:{
+            placeholder: "Doc",
+            link: "#"
+        },
+        {
+            placeholder: "Privacy and Policy",
+            link: "#"
+        },            
+    ]
+    ,
+    hero:{
+        title:{
+            firstPart: "Share your GitHub profile",
+            secondPart: "as resume!"
+        },
+        subTitle:{
+            firstPart: "Working in a company does not reveal a candidate's history or ability to write high-quality code. However, the developer's GitHub profile can serve as a barometer of his or her good or bad habits.",
+        },
+        CTA: {
+            Generate: {
+                placeholder: "Generate now",
                 link: "#"
             },
-            doc:{
+            Contribution: {
+                placeholder: "Contribute",
                 link: "#"
-            },
-            privacyPolicy:{
-                link: "#"
-            },            
-        }
-    ],
+            }
+        },
+        image: {
+            altText: "Hero Image of MOG",
+            image: "#"
+        }          
+    }
+    ,
 
 }
 

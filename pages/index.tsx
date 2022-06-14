@@ -4,6 +4,7 @@ import { homePageStaticData } from '../page-content/home-page/homePageStaticData
 
 
 const Home: NextPage = () => {
+  console.log(homePageStaticData)
   return (
     <div>
       <Head>
