@@ -13,9 +13,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        greenMOG: '#8DF0AF',
-        blueMOG: '#9CC9F3',
-        grayMOG: '#1D2736'
+        greenMOGH: '#8DF0AF',
+        blueMOGH: '#9CC9F3',
+        grayMOGH: '#1D2736',
+        grayDimMOGH: '#677487',
         
       },
       fontFamily: {

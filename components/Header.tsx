@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import MOG from '../public/svg/MOG-logo.svg'
+import MOG from '../public/svg/MOGH-logo.svg'
 import MOG_text from '../public/svg/MOG-text.svg'
 import deco from '../public/svg/deco.svg'
 import Link from 'next/link'
@@ -16,7 +16,7 @@ interface HeaderProps{
 
 const Header:FC<HeaderProps> = ({navs}) => {
   return (
-    <div className='relative max-w-2xl mx-auto'>
+    <div className='relative max-w-6xl mx-auto'>
         <div className='absolute top-[-760px] left-[-440px] scale-[1] ' >
            <Image src={deco} alt={"deco vector graphic"}/>
         </div>

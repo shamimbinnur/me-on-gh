@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Header from '../components/Header'
+import Hero from '../components/Hero'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
 
 type navs= [
@@ -37,6 +38,8 @@ const Home: NextPage = () => {
 
       <div className='py-[20px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
+
+        <Hero/>
       </div>
 
 
