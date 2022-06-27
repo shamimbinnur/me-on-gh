@@ -18,6 +18,26 @@ type features= [
     previewImage: string    
   }      
 ]
+interface hero{
+    title:{
+      firstPart: string,
+      secondPart: string
+    },
+    subTitle:{
+      firstPart: ""
+    },
+    CTA:{
+      Generate: {
+        placeholder: string,
+        link: string
+    },
+    Contribution: {
+        placeholder: string,
+        link: string
+    }
+    }
+
+}
 
 
 const Home: NextPage = () => {
@@ -47,7 +67,7 @@ const Home: NextPage = () => {
       <div className='py-[20px] px-[10px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
 
-        <Hero/>
+        <Hero heroData={homePageStaticData.hero as unknown as hero || {}} />
 
         <Feature features={ homePageStaticData.feature as features || [] }/>
       </div>

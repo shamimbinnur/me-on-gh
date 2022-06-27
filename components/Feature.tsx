@@ -16,7 +16,7 @@ const Feature:FC<FeatureProps> = ({features})=> {
         <div className='max-w-6xl flex mx-auto py-[80px]'>
             {
                 features.map( (feature, index) => (
-                <div className='flex flex-1 items-center'>
+                <div key={feature.title} className='flex flex-1 items-center'>
                     <Image className='' width={130} height={130} src={feature.previewImage}/>
                     
                     <div>

@@ -3,19 +3,39 @@ import React, { FC } from 'react'
 import artwork from '../public/svg/artwork.svg'
 import heroPhoto from '../public/svg/hero-photo.svg'
 
-type HeroProps = {}
+interface HeroProps{
+    heroData: {
+        title:{
+            firstPart: string,
+            secondPart: string
+        },
+        subTitle:{
+            firstPart: ""
+        },
+        CTA:{
+            Generate: {
+                placeholder: string,
+                link: string
+            },
+            Contribution: {
+                placeholder: string,
+                link: string
+            }
+        }
+    }
+}
 
-const Hero:FC<HeroProps> = ({})=> {
+const Hero:FC<HeroProps> = ({heroData})=> {
   return (
     <div>
         <div className='max-w-6xl mx-auto flex mt-[180px]'>
             <div className='flex-1'>
-               <h1 className='font-bold text-grayMOGH text-[60px] leading-[64px]'>Share your GitHub profile <br /> <span className='text-greenMOGH' >as resume!</span></h1>
+               <h1 className='font-bold text-grayMOGH text-[60px] leading-[64px]'>{heroData.title.firstPart} <br /> <span className='text-greenMOGH' >{heroData.title.secondPart}</span></h1>
 
-               <p className='leading-[27px] text-grayDimMOGH my-[20px]'>Working in a company does not reveal a candidate's history or ability to write high-quality code. However, the developer's GitHub profile can serve as a barometer of his or her good or bad habits.</p>
+               <p className='leading-[27px] text-grayDimMOGH my-[20px]'>{heroData.subTitle.firstPart}</p>
 
-                <button className='bg-greenMOGH CTA-button mr-[10px]' >Generate Now</button>
-                <button className=' bg-blueMOGH CTA-button'>Contribute</button>
+                <button className='bg-greenMOGH CTA-button mr-[10px]' >{heroData.CTA.Generate.placeholder}</button>
+                <button className=' bg-blueMOGH CTA-button'>{heroData.CTA.Contribution.placeholder}</button>
             </div>
 
             <div className='flex-1 relative'>
