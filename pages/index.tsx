@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Feature from '../components/Feature'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
@@ -9,6 +10,13 @@ type navs= [
       placeholder: string
       link: string
     }
+]
+type features= [
+  {
+    title: string,
+    subTitle: string,
+    previewImage: string    
+  }      
 ]
 
 
@@ -40,6 +48,8 @@ const Home: NextPage = () => {
         <Header navs={homePageStaticData.headerNav as navs || []} />
 
         <Hero/>
+
+        <Feature features={ homePageStaticData.feature as features || [] }/>
       </div>
 
 

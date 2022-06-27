@@ -43,25 +43,25 @@ const homePageStaticData = {
             image: "#"
         }          
     },
-    feaure: [
+    feature: [
         {
-            title: "title",
-            subTitle: "Sub title",
-            previewImage: "../../public/svg.pdfIcon.svg"
+            title: "One Click PDF Genarating",
+            subTitle: "Turning the github profile into a pdf file is super easy at MOG! Just one click away!",
+            previewImage: "/svg/pdfIcon.svg"
 
         },
         {
-            title: "title2",
-            subTitle: "Sub title2",
-            previewImage: "../../public/svg.linkIcon.svg"
+            title: "Shareable Profile link",
+            subTitle: "Your profile link is already pre-generated, just copy and share whatever you want!",
+            previewImage: "/svg/linkIcon.svg"
 
         },
         {
-            title: "title3",
-            subTitle: "Sub title3",
-            previewImage: "../../public/svg.osIcon.svg"
+            title: "Open Saurce",
+            subTitle: "Me on GitHub (MOG) is open saurce, you can inspect the source code and contribute on it to make it better!",
+            previewImage: "/svg/osIcon.svg"
 
-        },
+        }
     ]
     ,
 
