@@ -1,8 +1,5 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import pdfIcon from '../public/svg/pdfIcon.svg'
-import linkIcon from '../public/svg/linkIcon.svg'
-import osIcon from '../public/svg/osIcon.svg'
 
 interface FeatureProps{
     features: [
@@ -16,25 +13,24 @@ interface FeatureProps{
 
 const Feature:FC<FeatureProps> = ({features})=> {
   return (
-    <div>
-        <div className='max-w-6xl flex mx-auto'>
+        <div className='max-w-6xl flex mx-auto py-[80px]'>
             {
                 features.map( (feature, index) => (
-                <div className='flex gap-[5px] flex-1 items-center'>
+                <div className='flex flex-1 items-center'>
                     <Image className='' width={130} height={130} src={feature.previewImage}/>
                     
                     <div>
-                        <h2 className='text-[20px] text-grayMOGH font-medium'>{feature.title}</h2>
-                        <p className='text-[13px] text-grayMOGH'>{feature.subTitle}</p>
+                        <h2 className='text-[18px] text-grayMOGH font-medium'>{feature.title}</h2>
+                        <p className='text-[12px] text-grayMOGH'>{feature.subTitle}</p>
                     </div>
+                    
+                    { index != features.length-1 && <div className=' bg-greenMOGH mx-[15px] h-[60px] w-[2px] rounded-md '></div>}
                 </div>
+                
 
                 ))
             }
-
         </div>
-        
-    </div>
   )
 }
 
