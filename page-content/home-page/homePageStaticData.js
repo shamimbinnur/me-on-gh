@@ -42,7 +42,27 @@ const homePageStaticData = {
             altText: "Hero Image of MOG",
             image: "#"
         }          
-    }
+    },
+    feaure: [
+        {
+            title: "title",
+            subTitle: "Sub title",
+            previewImage: "../../public/svg.pdfIcon.svg"
+
+        },
+        {
+            title: "title2",
+            subTitle: "Sub title2",
+            previewImage: "../../public/svg.linkIcon.svg"
+
+        },
+        {
+            title: "title3",
+            subTitle: "Sub title3",
+            previewImage: "../../public/svg.osIcon.svg"
+
+        },
+    ]
     ,
 
 }

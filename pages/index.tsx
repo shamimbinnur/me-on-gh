@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
 
-      <div className='py-[20px]'>
+      <div className='py-[20px] px-[10px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
 
         <Hero/>
