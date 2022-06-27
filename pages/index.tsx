@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Feature from '../components/Feature'
 import Header from '../components/Header'
+import Hero from '../components/Hero'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
 
 type navs= [
@@ -9,6 +11,33 @@ type navs= [
       link: string
     }
 ]
+type features= [
+  {
+    title: string,
+    subTitle: string,
+    previewImage: string    
+  }      
+]
+interface hero{
+    title:{
+      firstPart: string,
+      secondPart: string
+    },
+    subTitle:{
+      firstPart: ""
+    },
+    CTA:{
+      Generate: {
+        placeholder: string,
+        link: string
+    },
+    Contribution: {
+        placeholder: string,
+        link: string
+    }
+    }
+
+}
 
 
 const Home: NextPage = () => {
@@ -35,8 +64,12 @@ const Home: NextPage = () => {
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
 
-      <div className='py-[20px]'>
+      <div className='py-[20px] px-[10px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
+
+        <Hero heroData={homePageStaticData.hero as unknown as hero || {}} />
+
+        <Feature features={ homePageStaticData.feature as features || [] }/>
       </div>
 
 
