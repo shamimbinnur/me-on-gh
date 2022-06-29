@@ -17,6 +17,8 @@ module.exports = {
         blueMOGH: '#9CC9F3',
         grayMOGH: '#1D2736',
         grayDimMOGH: '#677487',
+        grayDarkMOGH: '#313E53',
+        skyMOGH: '#F4F9FE',
         
       },
       fontFamily: {

@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Feature from '../components/Feature'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
@@ -70,6 +71,8 @@ const Home: NextPage = () => {
         <Hero heroData={homePageStaticData.hero as unknown as hero || {}} />
 
         <Feature features={ homePageStaticData.feature as features || [] }/>
+
+        <Footer/>
       </div>
 
 
