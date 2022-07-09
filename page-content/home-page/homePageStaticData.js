@@ -62,8 +62,30 @@ const homePageStaticData = {
             previewImage: "/svg/osIcon.svg"
 
         }
+    ],
+    footer: [
+        {   
+            placeholder: "Blog",
+            link: "#"
+        },
+        {
+            placeholder: "About us",
+            link: "#"
+        },
+        {
+            placeholder: "Contact us",
+            link: "#"
+        },    
+        {
+            placeholder: "Privacy & Policy",
+            link: "#"
+        },    
+        {
+            placeholder: "Terms and Conditions",
+            link: "#"
+        },    
     ]
-    ,
+
 
 }
 

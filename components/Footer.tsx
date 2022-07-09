@@ -1,19 +1,25 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { FC } from 'react'
 import fbIcon from '../public/svg/social/facebook.svg'
 import twitterIcon from '../public/svg/social/twitter.svg'
 import gitHubIcon from '../public/svg/social/github.svg'
 
-const navs = [1,1,1,1]
-
-function Footer() {
+interface FooterProps{
+  footer: [
+      {
+          placeholder: string
+          link: string
+      }
+  ]
+}
+const Footer:FC<FooterProps> = ({footer})=> {
   return (
     <div className='mx-auto bg-skyMOGH rounded-[10px] '>
       <div className='px-[10px] py-[50px] flex justify-center  bg-grayDarkMOGH rounded-[10px]'>
-        <ul className='flex gap-[10px] text-white font-medium text-[18px]'>
+        <ul className='flex gap-[50px] text-white font-medium text-[18px]'>
         {
-          navs.map( nav => (
-              <li><a href="#">Doc</a></li>
+          footer.map( nav => (
+              <li key={nav.placeholder}><a href={nav.link}>{nav.placeholder}</a></li>
           ))
         }
         </ul>
@@ -26,9 +32,9 @@ function Footer() {
         </div>
 
         <div className='flex gap-[10px]'>
-          <Image src={gitHubIcon} width={36} height={36} />
-          <Image src={twitterIcon} width={36} height={36} />
-          <Image src={fbIcon} width={36} height={36} />
+          <Image alt='GitHub Icon' src={gitHubIcon} width={36} height={36} />
+          <Image alt='TwitterIcon' src={twitterIcon} width={36} height={36} />
+          <Image alt='Facebook Icon' src={fbIcon} width={36} height={36} />
         </div>
 
       </div>
