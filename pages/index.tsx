@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Feature from '../components/Feature'
+import Footer from '../components/Footer'
+import BellowFooter from '../components/BellowFooter'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
@@ -36,8 +38,13 @@ interface hero{
         link: string
     }
     }
-
 }
+type footer= [
+  {
+    placeholder: string
+    link: string
+  }
+]
 
 
 const Home: NextPage = () => {
@@ -70,7 +77,10 @@ const Home: NextPage = () => {
         <Hero heroData={homePageStaticData.hero as unknown as hero || {}} />
 
         <Feature features={ homePageStaticData.feature as features || [] }/>
+
+        <Footer footer={ homePageStaticData.footer as footer || [] } />
       </div>
+      <BellowFooter/>
 
 
     </div>
