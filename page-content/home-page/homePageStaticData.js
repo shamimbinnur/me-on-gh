@@ -39,32 +39,52 @@ const homePageStaticData = {
             }
         },
         image: {
-            altText: "Hero Image of MOG",
+            altText: "Hero Image of MOGH",
             image: "#"
         }          
     },
     feature: [
         {
             title: "One Click PDF Genarating",
-            subTitle: "Turning the github profile into a pdf file is super easy at MOG! Just one click away!",
+            subTitle: "Turning the github profile into a pdf file is super easy at MOGH! Just one click away!",
             previewImage: "/svg/pdfIcon.svg"
 
         },
         {
             title: "Shareable Profile link",
-            subTitle: "Your profile link is already pre-generated, just copy and share whatever you want!",
+            subTitle: "Your profile link is ready already, just copy and share whatever you want!",
             previewImage: "/svg/linkIcon.svg"
 
         },
         {
             title: "Open Saurce",
-            subTitle: "Me on GitHub (MOG) is open saurce, you can inspect the source code and contribute on it to make it better!",
+            subTitle: "Me on GitHub (MOGH) is open saurce, you can inspect the source code and contribute on it to make it better!",
             previewImage: "/svg/osIcon.svg"
 
         }
+    ],
+    footer: [
+        {   
+            placeholder: "Blog",
+            link: "#"
+        },
+        {
+            placeholder: "About us",
+            link: "#"
+        },
+        {
+            placeholder: "Contact us",
+            link: "#"
+        },    
+        {
+            placeholder: "Privacy & Policy",
+            link: "#"
+        },    
+        {
+            placeholder: "Terms and Conditions",
+            link: "#"
+        },    
     ]
-    ,
-
 }
 
 export { homePageStaticData }
