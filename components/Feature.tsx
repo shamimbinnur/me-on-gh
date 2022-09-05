@@ -26,7 +26,7 @@ const Feature:FC<FeatureProps> = ({features})=> {
                         <p className=' text-[14px] text-center tablet:text-left tablet:text-[12px] text-grayMOGH'>{feature.subTitle}</p>
                     </div>
                     
-                    { index != features.length-1 && <div className=' bg-greenMOGH hidden laptop:block mx-[15px] h-[60px] w-[2px] rounded-md '></div>}
+                    { index != features.length-1 && <div className=' bg-primaryTwo hidden laptop:block mx-[15px] h-[60px] w-[2px] rounded-md '></div>}
                 </div>
                 
 
