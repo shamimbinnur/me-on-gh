@@ -16,5 +16,5 @@ html {
   box-sizing: border-box;
 }
 .CTA-button {
-  @apply rounded-[10px] text-[18px] font-bold text-white py-[10px] px-[20px];
+  @apply rounded-[10px] mobile:text-[14px] tablet:text-[16px] laptop:text-[18px] font-bold text-white py-[10px] px-[20px];
 }

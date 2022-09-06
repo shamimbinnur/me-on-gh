@@ -19,7 +19,10 @@ module.exports = {
         grayDimMOGH: '#677487',
         grayDarkMOGH: '#313E53',
         skyMOGH: '#F4F9FE',
-        
+        primaryOne: '#F46A6A',
+        primaryTwo: '#00BCD4',
+        secondary: '#1D2736',
+        cyanDim: '#F8FEFF'
       },
       fontFamily: {
         primary: "'Poppins', Tahoma, sans-serif",

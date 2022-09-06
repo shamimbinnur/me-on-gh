@@ -28,14 +28,14 @@ interface HeroProps{
 const Hero:FC<HeroProps> = ({heroData})=> {
   return (
     <div>
-        <div className='max-w-6xl mx-auto flex mt-[180px]'>
+        <div className='max-w-6xl mx-auto flex mobile:flex-col-reverse tablet:flex-row mobile:mt-[50px] tablet:mt-[180px]'>
             <div className='flex-1'>
-               <h1 className='font-bold text-grayMOGH text-[60px] leading-[64px]'>{heroData.title.firstPart} <br /> <span className='text-greenMOGH' >{heroData.title.secondPart}</span></h1>
+               <h1 className='font-bold text-secondary  mobile:text-[40px] tablet:text-[45px] laptop:text-[50px]  desktop:text-[60px] mobile:leading-[45px] laptop:leading-[64px]'>{heroData.title.firstPart} <br /> <span className='text-primaryOne' >{heroData.title.secondPart}</span></h1>
 
                <p className='leading-[27px] text-grayDimMOGH my-[20px]'>{heroData.subTitle.firstPart}</p>
 
-                <button className='bg-greenMOGH CTA-button mr-[10px]' >{heroData.CTA.Generate.placeholder}</button>
-                <button className=' bg-blueMOGH CTA-button'>{heroData.CTA.Contribution.placeholder}</button>
+                <button className='bg-primaryOne CTA-button mr-[10px]' >{heroData.CTA.Generate.placeholder}</button>
+                <button className=' bg-primaryTwo CTA-button'>{heroData.CTA.Contribution.placeholder}</button>
             </div>
 
             <div className='flex-1 relative'>
