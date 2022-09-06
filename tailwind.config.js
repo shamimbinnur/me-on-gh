@@ -23,7 +23,6 @@ module.exports = {
         primaryTwo: '#00BCD4',
         secondary: '#1D2736',
         cyanDim: '#F8FEFF'
-        
       },
       fontFamily: {
         primary: "'Poppins', Tahoma, sans-serif",
