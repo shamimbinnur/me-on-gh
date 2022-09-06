@@ -17,9 +17,9 @@ interface HeaderProps{
 const Header:FC<HeaderProps> = ({navs}) => {
   return (
     <div className='relative max-w-6xl mx-auto'>
-        <div className='absolute top-[-760px] left-[-440px] scale-[1] ' >
+        {/* <div className='absolute top-[-760px] left-[-440px] scale-[1] ' >
            <Image src={deco} alt={"deco vector graphic"}/>
-        </div>
+        </div> */}
         
         <div className='flex items-center justify-between  '>
             <div className='flex gap-[15px] items-center'>
@@ -32,7 +32,7 @@ const Header:FC<HeaderProps> = ({navs}) => {
             </div>
 
             <div>
-                <ul className='tablet:flex hidden text-[15px] gap-[20px] tracking-tight text-grayMOG'>
+                <ul className='tablet:flex hidden text-[15px] font-semibold gap-[20px] tracking-tight text-grayMOG'>
                     {
                         navs.map( nav => (
                             <li key={nav.link}> <Link href={nav.link}><a>{nav.placeholder}</a></Link> </li>
