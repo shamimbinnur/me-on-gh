@@ -2,7 +2,6 @@ import axios from "axios";
 import getOrganizations from "./getOrganizations";
 import getRepos from "./getRepos";
 
-
 const getProfile = async (username: string) => {
     if(username == undefined || username == "") return
 
