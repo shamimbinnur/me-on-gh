@@ -11,6 +11,7 @@ import { BiWorld } from 'react-icons/bi';
 import { GiFamilyHouse } from 'react-icons/gi';
 import { BsFillPeopleFill } from 'react-icons/bs';
 import HeaderForProfile from '../../components/HeaderForProfile'
+import PopularRepo from '../../components/PopularRepo'
 
 interface ProfileProps {
   profileData : {
@@ -39,7 +40,7 @@ interface ProfileProps {
 
 
 const App: NextPage<ProfileProps>= ({profileData}) => {
-  const { name, avatar_url, bio, email,location, blog, followers, orgs, company } = profileData.profileData;
+  const { name, avatar_url, bio, email,location, blog, followers, orgs, company, popularRepos } = profileData.profileData;
   console.log(profileData);
   
   return (
@@ -68,7 +69,6 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 
       <div className="mobile:py-[20px] mobile:px-[20px] tablet:px-[30px] lapto:px-[10px] mx-auto max-w-6xl">
         <div className="flex">
-
           <div className="relative flex-1 flex justify-center p-10 items-center">
             <div className='absolute'>
               <Image src={dpArtwork} alt={name} width={400} height={400} />      
@@ -78,13 +78,10 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 
             </div>
           </div>
-
           <div className="flex-1">
             <h1 className="text-gray-700 font-bold text-[2.5rem]">{name}</h1>
             <p className="text-gray-700 font-semibold text-[1rem] my-[10px] max-w-[300px]">{bio}</p>
-
             <div>
-              
               {
                 company &&
                 <div className='flex items-center gap-2'>
@@ -94,7 +91,6 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
                   <p className="text-gray-600 font-semibold text-[1.1rem]">{"Meta inc"}</p>
                 </div>
               }
-
               {
                 location &&
                 <div className='flex items-center gap-2'>
@@ -104,7 +100,6 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
                   <p className="text-gray-600 font-semibold text-[1.1rem]">{location}</p>
                 </div>
               }
-
               {
                 blog &&
                 <div className='flex items-center gap-2'>
@@ -124,7 +119,6 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
                   <p className="text-gray-600 font-semibold text-[1.1rem]">{"OpenSauced"}</p>
                 </div>
               }
-
               {
                 followers &&
                 <div className='flex items-center gap-2'>
@@ -135,11 +129,11 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
                 </div>
               }
             </div>
-
           </div>
-
         </div>
       </div>
+      
+      <PopularRepo popularRepos={popularRepos as unknown as [] || []}/>
     </div>
   )
 }
