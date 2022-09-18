@@ -12,6 +12,7 @@ import { GiFamilyHouse } from 'react-icons/gi';
 import { BsFillPeopleFill } from 'react-icons/bs';
 import HeaderForProfile from '../../components/HeaderForProfile'
 import PopularRepo from '../../components/PopularRepo'
+import AllRepos from '../../components/AllRepos'
 
 interface ProfileProps {
   profileData : {
@@ -40,7 +41,7 @@ interface ProfileProps {
 
 
 const App: NextPage<ProfileProps>= ({profileData}) => {
-  const { name, avatar_url, bio, email,location, blog, followers, orgs, company, popularRepos } = profileData.profileData;
+  const { name, avatar_url, bio, repos,location, blog, followers, orgs, company, popularRepos } = profileData.profileData;
   console.log(profileData);
   
   return (
@@ -67,8 +68,8 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 
       <HeaderForProfile/>
 
-      <div className="mobile:py-[20px] mobile:px-[20px] tablet:px-[30px] lapto:px-[10px] mx-auto max-w-6xl">
-        <div className="flex">
+      <div className="mobile:py-[20px] min-h-screen mobile:px-[20px] tablet:px-[30px] lapto:px-[10px] mx-auto max-w-6xl">
+        <div className="flex flex-col items-center">
           <div className="relative flex-1 flex justify-center p-10 items-center">
             <div className='absolute'>
               <Image src={dpArtwork} alt={name} width={400} height={400} />      
@@ -134,6 +135,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
       </div>
       
       <PopularRepo popularRepos={popularRepos as unknown as [] || []}/>
+      <AllRepos allRepos={repos as unknown as [] || []}/>
     </div>
   )
 }
