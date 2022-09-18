@@ -68,7 +68,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 
       <HeaderForProfile/>
 
-      <div className="mobile:py-[20px] mobile:px-[20px] tablet:px-[30px] lapto:px-[10px] mx-auto max-w-6xl">
+      <div className="mobile:py-[20px] min-h-screen mobile:px-[20px] tablet:px-[30px] lapto:px-[10px] mx-auto max-w-6xl">
         <div className="flex flex-col items-center">
           <div className="relative flex-1 flex justify-center p-10 items-center">
             <div className='absolute'>
