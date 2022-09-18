@@ -12,6 +12,7 @@ import { GiFamilyHouse } from 'react-icons/gi';
 import { BsFillPeopleFill } from 'react-icons/bs';
 import HeaderForProfile from '../../components/HeaderForProfile'
 import PopularRepo from '../../components/PopularRepo'
+import AllRepos from '../../components/AllRepos'
 
 interface ProfileProps {
   profileData : {
@@ -40,7 +41,7 @@ interface ProfileProps {
 
 
 const App: NextPage<ProfileProps>= ({profileData}) => {
-  const { name, avatar_url, bio, email,location, blog, followers, orgs, company, popularRepos } = profileData.profileData;
+  const { name, avatar_url, bio, repos,location, blog, followers, orgs, company, popularRepos } = profileData.profileData;
   console.log(profileData);
   
   return (
@@ -134,6 +135,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
       </div>
       
       <PopularRepo popularRepos={popularRepos as unknown as [] || []}/>
+      <AllRepos allRepos={repos as unknown as [] || []}/>
     </div>
   )
 }

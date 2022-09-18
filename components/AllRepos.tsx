@@ -7,7 +7,7 @@ import { BiGitRepoForked } from 'react-icons/bi'
 import { BsFileEarmarkCodeFill } from 'react-icons/bs'
 
 interface Props {
-    popularRepos: {
+    allRepos: {
         full_name: string,
         forks_count: number,
         language: string,
@@ -22,21 +22,21 @@ interface Props {
 
 const dotColors = ["bg-red-400","bg-green-400","bg-blue-400","bg-orange-400","bg-cyan-400"]
 
-const PopularRepo:FC<Props> = ({popularRepos}) => {
-    console.log(popularRepos)
+const AllRepos:FC<Props> = ({allRepos}) => {
+    console.log(allRepos)
 
     return (
-    <div className='max-w-6xl mx-auto  px-5 tablet:px-10  py-10'>
+    <div className='max-w-6xl mx-auto px-5 tablet:px-10 py-10'>
         <div className='flex items-center mb-6 gap-2'>
             <div className='text-primaryOne bg-primaryOne rounded-[8px] text-[1.2rem] bg-opacity-20 p-1'>
                 <GiStarFormation />
             </div>
-            <h6 className='text-[1.3rem] font-semibold text-gray-700'>Popular Repo</h6>
+            <h6 className='text-[1.3rem] font-semibold text-gray-700'>{`Public Repo (${allRepos.length})`}</h6>
         </div>
 
         <div className='grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-4'>
             {
-                popularRepos.map(({full_name,forks_count, topics, stargazers_count, language, html_url, description, score}, index) => (
+                allRepos.map(({full_name,forks_count, topics, stargazers_count, language, html_url, description, score}, index) => (
                     <div key={index+2} className='bg-primaryTwo bg-opacity-10 px-5 py-5 rounded-[10px] flex flex-col justify-between'>
                         <div>
                             <Link href={html_url}>
@@ -93,4 +93,4 @@ const PopularRepo:FC<Props> = ({popularRepos}) => {
     )
 }
 
-export default PopularRepo
+export default AllRepos;
