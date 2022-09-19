@@ -6,7 +6,7 @@ import MOGH_text from '../public/svg/MOG-text.svg'
 
 
 
-const BellowFooter = () => {
+const BelowFooter = () => {
   return (
     <div className='flex flex-col relative items-center'>
         <div className='mx-auto absolute top-0 left-0'>
@@ -27,4 +27,4 @@ const BellowFooter = () => {
   )
 }
 
-export default BellowFooter
+export default BelowFooter

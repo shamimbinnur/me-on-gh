@@ -21,7 +21,7 @@ const Header:FC<HeaderProps> = ({navs}) => {
            <Image src={deco} alt={"deco vector graphic"}/>
         </div> */}
         
-        <div className='flex items-center justify-between  '>
+        <div className='flex items-center px-5 justify-between  '>
             <div className='flex gap-[15px] items-center'>
                 <div className='flex justify-center w-[50px] h-[50px] tablet:w-[60px] tablet:h-[60px]'>
                     <Image src={MOG} width={60} height={60} alt="MOG Logo" />

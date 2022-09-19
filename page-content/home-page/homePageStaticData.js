@@ -1,7 +1,7 @@
 const homePageStaticData = {
     seo:{
-        title: "Me on Gh",
-        metaDesc: "Generate your github profile in one click!",
+        title: "Me on GitHub",
+        metaDesc: "Share and Export your GitHub profile like a resume!",
         url: "localhost",
         image: ""
     },
@@ -22,19 +22,19 @@ const homePageStaticData = {
     ,
     hero:{
         title:{
-            firstPart: "Share your GitHub profile",
-            secondPart: "as resume!"
+            firstPart: "Share and Export your GitHub profile",
+            secondPart: "like a resume!"
         },
         subTitle:{
             firstPart: "Working in a company does not reveal a candidate's history or ability to write high-quality code. However, the developer's GitHub profile can serve as a barometer of his or her good or bad habits.",
         },
         CTA: {
             Generate: {
-                placeholder: "Generate now",
+                placeholder: "Generate & Export",
                 link: "#"
             },
             Contribution: {
-                placeholder: "Contribute",
+                placeholder: "Make MOGH better",
                 link: "#"
             }
         },
@@ -52,13 +52,13 @@ const homePageStaticData = {
         },
         {
             title: "Shareable Profile link",
-            subTitle: "Your profile link is ready already, just copy and share whatever you want!",
+            subTitle: "Your profile link is ready already, just copy and share wherever you want!",
             previewImage: "/svg/linkIcon.svg"
 
         },
         {
-            title: "Open Saurce",
-            subTitle: "Me on GitHub (MOGH) is open saurce, you can inspect the source code and contribute on it to make it better!",
+            title: "Open Source",
+            subTitle: "Me on GitHub (MOGH) is open source, you can inspect the source code and help make it better by contributing!",
             previewImage: "/svg/osIcon.svg"
 
         }
