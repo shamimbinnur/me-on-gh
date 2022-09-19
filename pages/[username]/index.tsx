@@ -113,8 +113,8 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
                   <div className='bg-primaryTwo p-[4px] group-hover:bg-opacity-20 rounded-full bg-opacity-20 group-hover:bg-primaryOne transition ease-in-out duration-500 flex items-center justify-center'>
                     <BiWorld className='text-primaryTwo group-hover:text-primaryOne transition ease-in-out duration-300 text-[1rem]' />
                   </div>
-                  <Link href={blog}>
-                    <p className="text-gray-600 font-semibold text-[1.1rem]">{blog}</p>
+                  <Link rel="noreferrer" target="_blank" href={"https://"+blog} >
+                    <p className="text-gray-600 font-semibold cursor-pointer text-[1.1rem]">{blog}</p>
                   </Link>
                 </div>
               }
