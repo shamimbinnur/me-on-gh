@@ -37,7 +37,7 @@ const PopularRepo:FC<Props> = ({popularRepos}) => {
         <div className='grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-4'>
             {
                 popularRepos.map(({full_name,forks_count, topics, stargazers_count, language, html_url, description, score}, index) => (
-                    <div key={index+2} className='bg-primaryTwo bg-opacity-10 px-5 py-5 rounded-[10px] flex flex-col justify-between'>
+                    <div key={index+2} className='bg-primaryTwo bg-opacity-10 hover:bg-opacity-[.14] transition duration-200 ease-in-out px-5 py-5 rounded-[10px] flex flex-col justify-between'>
                         <div>
                             <Link href={html_url}>
                                 <div className='flex cursor-pointer items-start gap-2'>
@@ -68,7 +68,7 @@ const PopularRepo:FC<Props> = ({popularRepos}) => {
                                 <p className='text-gray-700 text-[0.8rem] font-semibold'>{score}</p>
                             </div>
 
-                            <div className='flex gap-1 rounded-[20px] px-[8px] py-[2px] bg-green-400 bg-opacity-20  items-center'>
+                            <div className='flex gap-1 rounded-[20px] px-[8px] py-[2px]  bg-green-400 bg-opacity-20 items-center'>
                                 <BiGitRepoForked className='text-green-400'/>
                                 <p className='text-gray-700 text-[0.8rem] font-semibold'>{forks_count}</p>
                             </div>
