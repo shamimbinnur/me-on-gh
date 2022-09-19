@@ -6,6 +6,7 @@ import BelowFooter from '../components/BelowFooter'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
+import SignIn from '../components/modals/SignIn'
 
 type navs= [
     {
@@ -70,7 +71,7 @@ const Home: NextPage = () => {
         <meta property="twitter:description" content={homePageStaticData.seo.metaDesc} />
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
-
+      <SignIn/>
       <div className='mobile:px-[5px] tablet:px-[30px] lapto:px-[10px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
 
