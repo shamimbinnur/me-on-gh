@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { homePageStaticData } from '../../page-content/home-page/homePageStaticData'
 import { getProfile } from '../../github/gitHubApi'
 import Image from 'next/image'
@@ -10,10 +10,12 @@ import { HiOutlineOfficeBuilding, HiLocationMarker } from 'react-icons/hi';
 import { BiWorld } from 'react-icons/bi';
 import { GiFamilyHouse } from 'react-icons/gi';
 import { BsFillPeopleFill } from 'react-icons/bs';
+import { GoArrowSmallDown } from 'react-icons/go';
 import HeaderForProfile from '../../components/HeaderForProfile'
 import PopularRepo from '../../components/PopularRepo'
 import AllRepos from '../../components/AllRepos'
 import Link from 'next/link'
+
 
 interface ProfileProps {
   profileData : {
@@ -44,6 +46,7 @@ interface ProfileProps {
 const App: NextPage<ProfileProps>= ({profileData}) => {
   const { name, avatar_url, bio, repos,location, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
   console.log(profileData);
+
   
   return (
     <div>
@@ -133,6 +136,10 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
                 </div>
               }
             </div>
+          </div>
+
+          <div className='flex justify-self-center my-20'>
+            <GoArrowSmallDown className='text-[2.5rem] text-gray-300 opacity-60'/>
           </div>
         </div>
       </div>
