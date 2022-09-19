@@ -71,7 +71,7 @@ const Home: NextPage = () => {
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
 
-      <div className='mobile:py-[20px] mobile:px-[20px] tablet:px-[30px] lapto:px-[10px]'>
+      <div className='mobile:px-[5px] tablet:px-[30px] lapto:px-[10px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
 
         <Hero heroData={homePageStaticData.hero as unknown as hero || {}} />
@@ -81,8 +81,6 @@ const Home: NextPage = () => {
         <Footer footer={ homePageStaticData.footer as footer || [] } />
       </div>
       <BellowFooter/>
-
-
     </div>
   )
 }
