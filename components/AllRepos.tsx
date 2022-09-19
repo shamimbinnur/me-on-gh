@@ -64,11 +64,6 @@ const AllRepos:FC<Props> = ({allRepos}) => {
                         <p className='text-gray-700 py-5'>{(description != null ? description : "No description available" )}</p>
 
                         <div className='flex gap-2'>
-                            <div className='flex gap-1 rounded-[20px] px-[8px] py-[2px] bg-red-400 bg-opacity-20  items-center'>
-                                <FiCornerRightUp className='text-red-400'/>
-                                <p className='text-gray-700 text-[0.8rem] font-semibold'>{score}</p>
-                            </div>
-
                             <div className='flex gap-1 rounded-[20px] px-[8px] py-[2px] bg-green-400 bg-opacity-20  items-center'>
                                 <BiGitRepoForked className='text-green-400'/>
                                 <p className='text-gray-700 text-[0.8rem] font-semibold'>{forks_count}</p>
