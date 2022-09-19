@@ -16,6 +16,7 @@ interface Props {
         html_url: string,
         score: number,
         topics: string[],
+        name: string
 
     }[]
 }
@@ -36,13 +37,13 @@ const AllRepos:FC<Props> = ({allRepos}) => {
 
         <div className='grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-4'>
             {
-                allRepos.map(({full_name,forks_count, topics, stargazers_count, language, html_url, description, score}, index) => (
-                    <div key={index+2} className='bg-primaryTwo bg-opacity-10 px-5 py-5 rounded-[10px] flex flex-col justify-between'>
+                allRepos.map(({name,forks_count, topics, stargazers_count, language, html_url, description, score}, index) => (
+                    <div key={index+2} className='bg-primaryTwo bg-opacity-10 hover:bg-opacity-[.14] transition duration-200 ease-in-out px-5 py-5 rounded-[10px] flex flex-col justify-between'>
                         <div>
                             <Link href={html_url}>
                                 <div className='flex cursor-pointer items-start gap-2'>
                                     <BsGithub className='w-[20px] h-[20px] mt-1' />
-                                    <h6 className='text-[1.1rem] font-semibold text-gray-700 break-all'>{full_name}</h6>
+                                    <h6 className='text-[1.1rem] font-semibold text-gray-700 break-all uppercase'>{name}</h6>
                                 </div>
                             </Link>
                             
@@ -52,7 +53,7 @@ const AllRepos:FC<Props> = ({allRepos}) => {
                                     topics.map( (topic) => (
                                         <div key={topic+1} className='flex items-center gap-2'>
                                             <div className={'w-2 h-2 rounded-full '+dotColors[Math.ceil(Math.random() * 4)] }></div>
-                                            <p className='text-gray-500 text-[14px] font-semibold '>{topic}</p>
+                                            <p className='text-gray-500 text-[14px] font-semibold'>{topic}</p>
                                         </div>
 
                                     ))

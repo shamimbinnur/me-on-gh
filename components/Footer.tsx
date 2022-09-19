@@ -15,16 +15,19 @@ interface FooterProps{
 const Footer:FC<FooterProps> = ({footer})=> {
   return (
     <div className='mx-auto bg-skyMOGH rounded-[10px] '>
-      <div className='px-[10px] py-[20px] tablet:py-[50px] flex justify-center  bg-secondary rounded-[10px]'>
-        <ul className='flex flex-col tablet:flex-row items-center gap-[10px] tablet:gap-[50px] text-white font-medium text-[14px] tablet:text-[16px] laptop:text-[18px]'>
+      <div className='px-[20px] py-[20px] tablet:py-[50px] tablet:px-[20px] flex justify-center  bg-secondary rounded-[10px]'>
+        <ul className='grid grid-flow-row grid-cols-2 tablet:grid-cols-5 gap-x-10 gap-y-2 text-white font-medium text-[14px] tablet:text-[16px] laptop:text-[18px]'>
         {
           footer.map( nav => (
-              <li key={nav.placeholder}><a href={nav.link}>{nav.placeholder}</a></li>
+            <div key={nav.placeholder}>
+              <li ><a href={nav.link}>{nav.placeholder}</a></li>
+            </div>
           ))
         }
         </ul>
       </div>
-      <div className='flex px-[100px] py-[40px] justify-between bg-cyanDim'>
+      
+      <div className='flex px-[100px] py-[40px] flex-col tablet:flex-row gap-y-10 items-center tablet:justify-between bg-cyanDim'>
         <div>
           <h6 className='tablet:text-[22px] laptop:text-[25px] text-primaryTwo font-medium'>Anything in mind? Create an issue!</h6>
           <p className='tablet:text-[14px] laptop:text-[16px] text-secondary '>Click here.</p>
