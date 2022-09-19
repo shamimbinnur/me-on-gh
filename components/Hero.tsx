@@ -34,7 +34,7 @@ const Hero:FC<HeroProps> = ({heroData})=> {
 
                <p className='leading-[27px] text-grayDimMOGH my-[20px]'>{heroData.subTitle.firstPart}</p>
 
-                <button className='bg-primaryOne CTA-button mr-[10px]' >{heroData.CTA.Generate.placeholder}</button>
+                <button className='bg-primaryOne CTA-button mr-[10px] mb-[10px] ' >{heroData.CTA.Generate.placeholder}</button>
                 <button className=' bg-primaryTwo CTA-button'>{heroData.CTA.Contribution.placeholder}</button>
             </div>
 

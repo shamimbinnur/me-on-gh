@@ -27,7 +27,7 @@ const Footer:FC<FooterProps> = ({footer})=> {
         </ul>
       </div>
       
-      <div className='flex px-[100px] py-[40px] flex-col tablet:flex-row gap-y-10 items-center tablet:justify-between bg-cyanDim'>
+      <div className='flex w-full px-[10px] py-[40px] flex-col tablet:flex-row gap-y-10 items-center tablet:justify-between bg-cyanDim'>
         <div>
           <h6 className='tablet:text-[22px] laptop:text-[25px] text-primaryTwo font-medium'>Anything in mind? Create an issue!</h6>
           <p className='tablet:text-[14px] laptop:text-[16px] text-secondary '>Click here.</p>
