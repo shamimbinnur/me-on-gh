@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import Hero from '../components/Hero'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
 import SignIn from '../components/modals/SignIn'
+import { useState } from 'react'
 
 type navs= [
     {
@@ -50,6 +51,8 @@ type footer= [
 
 const Home: NextPage = () => {
 
+  const [showSignInModal, setShowSignInModal] = useState(false)
+
   return (
     <div>
       <Head>
@@ -71,11 +74,13 @@ const Home: NextPage = () => {
         <meta property="twitter:description" content={homePageStaticData.seo.metaDesc} />
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
-      <SignIn/>
+
+      <SignIn state={{showSignInModal, setShowSignInModal}} />
+      
       <div className='mobile:px-[5px] tablet:px-[30px] lapto:px-[10px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
 
-        <Hero heroData={homePageStaticData.hero as unknown as hero || {}} />
+        <Hero state={{setShowSignInModal}} heroData={homePageStaticData.hero as unknown as hero || {}} />
 
         <Feature features={ homePageStaticData.feature as features || [] }/>
 
