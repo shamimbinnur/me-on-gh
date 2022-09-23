@@ -20,7 +20,7 @@ const BelowFooter = () => {
                 <div className='w-[90px] h-[18px] '>
                     <Image alt='Mogh text' src={MOGH_text} />
                 </div>
-                <p className='text-[10px] text-grayDimMOGH'>Open Source, MIT Licenced</p>
+                <p className='text-[10px] text-grayDimMOGH'>Open Source, MIT Licensed</p>
             </div>
         </div>     
     </div>

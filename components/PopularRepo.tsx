@@ -24,7 +24,6 @@ interface Props {
 const dotColors = ["bg-red-400","bg-green-400","bg-blue-400","bg-orange-400","bg-cyan-400"]
 
 const PopularRepo:FC<Props> = ({popularRepos}) => {
-    console.log(popularRepos)
 
     return (
     <div className='max-w-6xl mx-auto  px-5 tablet:px-10  py-10'>

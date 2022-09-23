@@ -45,7 +45,7 @@ interface ProfileProps {
 
 const App: NextPage<ProfileProps>= ({profileData}) => {
   const { name, avatar_url, bio, repos,location, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
-  console.log(profileData);
+  // console.log(profileData);
 
   
   return (
@@ -154,6 +154,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 
 export async function getServerSideProps(context: any) {
   // const profileData = await getProfile(context.params.username)
+  await getProfile("shamimbinnur")
 
   return {
     props: {
