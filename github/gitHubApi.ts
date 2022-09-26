@@ -21,7 +21,7 @@ const getProfile = async (username: string) => {
 
     const orgs = await getOrganizations(username);
  
-    const { unsortedRepos, sortedRepos,  } = await getRepos(username);
+    const { unsortedRepos, sortedRepos, languageBasedRepo  } = await getRepos(username);
     
     const profileData = {
         hasStarred: true,
@@ -43,6 +43,7 @@ const getProfile = async (username: string) => {
             orgs: orgs,
             repos: unsortedRepos,
             popularRepos: sortedRepos.slice(0,4),
+            languageBasedRepo: languageBasedRepo,
         }
     }
 

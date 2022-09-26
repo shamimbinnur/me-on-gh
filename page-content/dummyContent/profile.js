@@ -1,9 +1,7 @@
 export const profileData = {
-    "hasStarred": true,
-    "profileData": {
         "name": "Shamim Bin Nur",
         "avatar_url": "https://avatars.githubusercontent.com/u/48399373?v=4",
-        "bio": "I build real-life applications and solve their problems.\r\niamshamimbn@gmail.com",
+        "bio": "I love to build real-life applications and solve their problems.\r\niamshamimbn@gmail.com",
         "public_repos": 45,
         "followers": 11,
         "location": "Dhaka, Bangladesh",
@@ -11,7 +9,7 @@ export const profileData = {
         "starred_url": "https://api.github.com/users/shamimbinnur/starred{/owner}{/repo}",
         "html_url": "https://github.com/shamimbinnur",
         "created_at": "2019-03-10T04:06:28Z",
-        "updated_at": "2022-08-14T12:13:34Z",
+        "updated_at": "2022-09-21T17:12:34Z",
         "email": null,
         "blog": "www.shamimbinnur.me",
         "company": null,
@@ -3450,6 +3448,64 @@ export const profileData = {
                 "default_branch": "master",
                 "score": 0
             }
+        ],
+        "languageBasedRepo": [
+            {
+                "lang": "Java",
+                "count": 1
+            },
+            {
+                "lang": "JavaScript",
+                "count": 19
+            },
+            {
+                "lang": "TypeScript",
+                "count": 2
+            },
+            {
+                "lang": "Css",
+                "count": 1
+            },
+            {
+                "lang": "Go",
+                "count": 0
+            },
+            {
+                "lang": "Kotlin",
+                "count": 0
+            },
+            {
+                "lang": "PHP",
+                "count": 0
+            },
+            {
+                "lang": "cSharp",
+                "count": 0
+            },
+            {
+                "lang": "TypeScript",
+                "count": 2
+            },
+            {
+                "lang": "R",
+                "count": 0
+            },
+            {
+                "lang": "Ruby",
+                "count": 0
+            },
+            {
+                "lang": "CandCPP",
+                "count": 0
+            },
+            {
+                "lang": "Matlab",
+                "count": 0
+            },
+            {
+                "lang": "Scala",
+                "count": 0
+            }
         ]
-    }
+
 }

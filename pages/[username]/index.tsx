@@ -15,6 +15,7 @@ import HeaderForProfile from '../../components/HeaderForProfile'
 import PopularRepo from '../../components/PopularRepo'
 import AllRepos from '../../components/AllRepos'
 import Link from 'next/link'
+import LBR from '../../components/LBR'
 
 
 interface ProfileProps {
@@ -38,14 +39,33 @@ interface ProfileProps {
           orgs: string
           repos: string[]
           popularRepos: string[]
+          languageBasedRepo: any
       }
   }
 }
 
+interface Props {
+  languageBasedRepo: {
+      Java: Number,
+      javaScript: Number,
+      TypeScript: Number,
+      Css: Number,
+      Go : Number,
+      Kotlin : Number,
+      PHP: Number,
+      cSharp : Number,
+      Swift : Number,
+      R : Number,
+      Ruby : Number,
+      CandCPP: Number,
+      Matlab: Number,
+      Scala: Number,
+  }
+}
 
 const App: NextPage<ProfileProps>= ({profileData}) => {
-  const { name, avatar_url, bio, repos,location, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
-  // console.log(profileData);
+  const { name, avatar_url, bio, repos,location, languageBasedRepo, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
+  console.log(profileData);
 
   
   return (
@@ -145,7 +165,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
           </div>
         </div>
       </div>
-      
+      <LBR languageBasedRepo={languageBasedRepo} />  
       <PopularRepo popularRepos={popularRepos as unknown as [] || []}/>
       <AllRepos allRepos={repos as unknown as [] || []}/>
     </div>
@@ -154,7 +174,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 
 export async function getServerSideProps(context: any) {
   // const profileData = await getProfile(context.params.username)
-  await getProfile("shamimbinnur")
+
 
   return {
     props: {

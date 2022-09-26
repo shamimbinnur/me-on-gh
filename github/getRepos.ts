@@ -1,4 +1,6 @@
 import axios from "axios";
+import { count } from "console";
+import { type } from "os";
 
 const getRepos = async (username: string) => {
     const { data } = await axios.get(`https://api.github.com/users/${username}/repos`)
@@ -52,21 +54,69 @@ const getLanguaseBasedRepo = (repo: []) => {
         else if (repo.language.toLowerCase() === "scala") scala += 1;
     });
 
-    const lbr = {
-        Java: java,
-        javaScript,
-        TypeScript: typeScript,
-        Css: css,
-        Go: go,
-        Kotlin: kotlin,
-        PHP: php,
-        cSharp: cSharp,
-        Swift: swift,
-        R: r,
-        Ruby: ruby,
-        CandCPP: cAndCPP,
-        Matlab: matlab,
-        Scala: scala
-    }
+    const lbr = [
+        {
+            lang: "Java",
+            count: java,
+        },
+        {
+            lang: "JavaScript",
+            count: javaScript,
+        },
+        {
+            lang: "TypeScript",
+            count: typeScript,
+        },
+        {
+            lang: "Css",
+            count: css,
+
+        },
+        {
+            lang: "Go",
+            count: go,
+        },
+        {
+            lang: "Kotlin",
+            count: kotlin,
+        },
+        {
+            lang: "PHP",
+            count: php,
+        },
+        {
+            lang: "cSharp",
+            count: cSharp,
+        },
+        {
+            lang: "TypeScript",
+            count: typeScript,
+
+        },
+        {
+            lang: "R",
+            count: r,
+        },
+        {
+            lang: "Ruby",
+            count: ruby,
+        },
+        {
+            lang: "CandCPP",
+            count: cAndCPP,
+        },
+        {
+
+            lang: "Matlab",
+            count: matlab,
+
+        },
+        {
+
+            lang: "Scala",
+            count: scala,
+
+        }
+    ]
     return lbr;
 }
