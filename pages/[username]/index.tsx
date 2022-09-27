@@ -16,11 +16,16 @@ import PopularRepo from '../../components/PopularRepo'
 import AllRepos from '../../components/AllRepos'
 import Link from 'next/link'
 import LBR from '../../components/LBR'
+import { redirect } from 'next/dist/server/api-utils'
+import StarCheck from '../../components/StarCheck'
+
 
 
 interface ProfileProps {
   profileData : {
-      hasStarred: boolean,
+      star:{
+        hasStarred: boolean
+      },
       profileData:{
           name: string
           avatar_url: string
@@ -67,7 +72,11 @@ interface Props {
 
 const App: NextPage<ProfileProps>= ({profileData}) => {
   const { name, avatar_url, bio, repos,location, languageBasedRepo, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
-  console.log(profileData);
+  console.log(profileData.star.hasStarred);
+
+  if(profileData.star.hasStarred){
+    return <StarCheck/>
+  }
 
   return (
     <div>
@@ -183,8 +192,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 }
 
 export async function getServerSideProps(context: any) {
-  const profileData = await getProfile(context.params.username)
-
+  // const profileData = await getProfile(context.params.username)
 
   return {
     props: {

@@ -89,11 +89,6 @@ const getLanguaseBasedRepo = (repo: []) => {
             count: cSharp,
         },
         {
-            lang: "TypeScript",
-            count: typeScript,
-
-        },
-        {
             lang: "R",
             count: r,
         },
@@ -106,16 +101,13 @@ const getLanguaseBasedRepo = (repo: []) => {
             count: cAndCPP,
         },
         {
-
             lang: "Matlab",
             count: matlab,
 
         },
         {
-
             lang: "Scala",
             count: scala,
-
         }
     ]
     return lbr;
