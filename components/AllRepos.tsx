@@ -28,7 +28,7 @@ const AllRepos:FC<Props> = ({allRepos}) => {
     return (
     <div className='max-w-6xl mx-auto px-5 tablet:px-10 py-10'>
         <div className='flex items-center mb-6 gap-2'>
-            <div className='text-primaryOne bg-primaryOne rounded-[8px] text-[1.2rem] bg-opacity-20 p-1'>
+            <div className='text-primaryOne bg-primaryOne rounded-full text-[1rem] bg-opacity-20 p-2'>
                 <GiStarFormation />
             </div>
             <h6 className='text-[1.3rem] font-semibold text-gray-700'>{`Public Repo (${allRepos.length})`}</h6>

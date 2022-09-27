@@ -36,7 +36,9 @@ interface ProfileProps {
           email: string
           blog: string
           company: string
-          orgs: string
+          orgs: {
+            login: string
+          }[]
           repos: string[]
           popularRepos: string[]
           languageBasedRepo: any
@@ -67,7 +69,6 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
   const { name, avatar_url, bio, repos,location, languageBasedRepo, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
   console.log(profileData);
 
-  
   return (
     <div>
       <Head>
@@ -104,7 +105,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
             </div>
           </div>
           <div className="flex-1">
-            <Link href={html_url}>
+            <Link href={html_url as string}>
               <h1 className="text-gray-700 cursor-pointer transition ease-in-out duration-500 hover:text-primaryOne font-bold text-[2.5rem]">{name}</h1>
             </Link>
             <p className="text-gray-700 font-semibold text-[1rem] my-[10px] max-w-[300px]">{bio}</p>
@@ -112,10 +113,10 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
               {
                 company &&
                 <div className='flex items-center gap-2 group'>
-                  <div className='bg-primaryTwo p-[4px] rounded-full bg-opacity-20 flex items-center justify-center'>
-                    <HiOutlineOfficeBuilding className='text-primaryTwo text-[1rem]' />
+                  <div className='bg-primaryTwo p-[4px] group-hover:bg-opacity-20 group-hover:bg-primaryOne rounded-full bg-opacity-20 flex items-center justify-center'>
+                    <HiOutlineOfficeBuilding className='text-primaryTwo group-hover:text-primaryOne transition ease-in-out duration-300 text-[1rem]' />
                   </div>
-                  <p className="text-gray-600 font-semibold text-[1.1rem]">{"Meta inc"}</p>
+                  <p className="text-gray-600 font-semibold text-[1.1rem]">{company}</p>
                 </div>
               }
               {
@@ -140,13 +141,22 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
               }
 
               {
-                orgs &&
+                orgs.length > 0 ? (
                 <div className='flex items-center group gap-2'>
                   <div className='bg-primaryTwo p-[4px] group-hover:bg-opacity-20 rounded-full bg-opacity-20 group-hover:bg-primaryOne transition ease-in-out duration-500 flex items-center justify-center'>
                     <GiFamilyHouse className='text-primaryTwo group-hover:text-primaryOne transition ease-in-out duration-300 text-[1rem]' />
                   </div>
-                  <p className="text-gray-600 font-semibold text-[1.1rem]">{"OpenSauced"}</p>
+                  <div className='flex items-center gap-2'>
+                    {
+                      orgs.map(og => (
+                        <div key={og.login}>
+                          <p className="text-gray-600 font-semibold text-[1.1rem]">{og.login}</p>
+                        </div>
+                      ))
+                    }
+                  </div>
                 </div>
+                ): ""
               }
               {
                 followers &&
@@ -173,8 +183,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 }
 
 export async function getServerSideProps(context: any) {
-  // const profileData = await getProfile(context.params.username)
-
+  const profileData = await getProfile(context.params.username)
 
 
   return {
