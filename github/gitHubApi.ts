@@ -5,26 +5,28 @@ import getRepos from "./getRepos";
 const getProfile = async (username: string) => {
     if(username == undefined || username == "") return
 
-    // const starringData = await axios.get(`https://api.github.com/repos/open-sauced/landing-page/stargazers`)
-    // const hasStarred:boolean = starringData.data.some((user: { login: string; }) => user.login == username)
-    // console.log("Starred ?", hasStarred)
+    const starringData = await axios.get(`https://api.github.com/repos/open-sauced/landing-page/stargazers`)
+    const hasStarred:boolean = starringData.data.some((user: { login: string; }) => user.login == username)
+    console.log("Starred ?", hasStarred)
 
-    // if(!hasStarred){
-    //     const profileData = {
-    //         hasStarred: false,
-    //         profileData:{}
-    //     }
-    //     return profileData
-    // }
+    if(!hasStarred){
+        const profileData = {
+            hasStarred: false,
+            profileData:{}
+        }
+        return profileData
+    }
         
     const { data } = await axios.get(`https://api.github.com/users/${username}`)
 
     const orgs = await getOrganizations(username);
  
-    const { unsortedRepos, sortedRepos,  } = await getRepos(username);
+    const { unsortedRepos, sortedRepos, languageBasedRepo  } = await getRepos(username);
     
     const profileData = {
-        hasStarred: true,
+        star: {
+            hasStarred
+        },
         profileData:{
             name: data.name,
             avatar_url: data.avatar_url,
@@ -43,6 +45,7 @@ const getProfile = async (username: string) => {
             orgs: orgs,
             repos: unsortedRepos,
             popularRepos: sortedRepos.slice(0,4),
+            languageBasedRepo: languageBasedRepo,
         }
     }
 

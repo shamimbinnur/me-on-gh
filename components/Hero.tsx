@@ -4,6 +4,9 @@ import artwork from '../public/svg/artwork.svg'
 import heroPhoto from '../public/svg/hero-photo.svg'
 
 interface HeroProps{
+    state: {
+        setShowSignInModal: (state: boolean) => void,
+    },
     heroData: {
         title:{
             firstPart: string,
@@ -25,7 +28,7 @@ interface HeroProps{
     }
 }
 
-const Hero:FC<HeroProps> = ({heroData})=> {
+const Hero:FC<HeroProps> = ({heroData, state: { setShowSignInModal }})=> {
   return (
     <div>
         <div className='max-w-6xl mx-auto flex mobile:flex-col-reverse tablet:flex-row mobile:mt-[50px] tablet:mt-[180px]'>
@@ -34,8 +37,8 @@ const Hero:FC<HeroProps> = ({heroData})=> {
 
                <p className='leading-[27px] text-grayDimMOGH my-[20px]'>{heroData.subTitle.firstPart}</p>
 
-                <button className='bg-primaryOne CTA-button mr-[10px]' >{heroData.CTA.Generate.placeholder}</button>
-                <button className=' bg-primaryTwo CTA-button'>{heroData.CTA.Contribution.placeholder}</button>
+                <button className=' bg-primaryTwo CTA-button mr-[10px] mb-[10px]'>{heroData.CTA.Contribution.placeholder}</button>
+                <button onClick={()=> setShowSignInModal(true)} className='bg-primaryOne CTA-button' >{heroData.CTA.Generate.placeholder}</button>
             </div>
 
             <div className='flex-1 relative'>
@@ -46,10 +49,8 @@ const Hero:FC<HeroProps> = ({heroData})=> {
                 <div className='scale-[.75]' >
                     <Image alt='MOGH hero pgoto' src={heroPhoto} layout='responsive' className='w-full h-full'/>
                 </div>
-                
             </div>
         </div>
-        
     </div>
   )
 }

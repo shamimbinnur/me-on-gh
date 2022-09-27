@@ -1,7 +1,7 @@
 const homePageStaticData = {
     seo:{
-        title: "Me on GitHub",
-        metaDesc: "Share and Export your GitHub profile like a resume!",
+        title: "Me on GitHub | MOG",
+        metaDesc: " Me on GH(MOG) allows you to Share and Export your GitHub profile like a resume!",
         url: "localhost",
         image: ""
     },
@@ -34,7 +34,7 @@ const homePageStaticData = {
                 link: "#"
             },
             Contribution: {
-                placeholder: "Make MOGH better",
+                placeholder: "Make MOG better",
                 link: "#"
             }
         },
@@ -46,7 +46,7 @@ const homePageStaticData = {
     feature: [
         {
             title: "One Click PDF Genarating",
-            subTitle: "Turning the github profile into a pdf file is super easy at MOGH! Just one click away!",
+            subTitle: "Turning the github profile into a pdf file is super easy at MOG! Just one click away!",
             previewImage: "/svg/pdfIcon.svg"
 
         },
@@ -58,7 +58,7 @@ const homePageStaticData = {
         },
         {
             title: "Open Source",
-            subTitle: "Me on GitHub (MOGH) is open source, you can inspect the source code and help make it better by contributing!",
+            subTitle: "Me on GitHub (MOG) is open source, you can inspect the source code and help make it better by contributing!",
             previewImage: "/svg/osIcon.svg"
 
         }

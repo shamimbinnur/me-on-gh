@@ -24,12 +24,11 @@ interface Props {
 const dotColors = ["bg-red-400","bg-green-400","bg-blue-400","bg-orange-400","bg-cyan-400"]
 
 const AllRepos:FC<Props> = ({allRepos}) => {
-    console.log(allRepos)
 
     return (
     <div className='max-w-6xl mx-auto px-5 tablet:px-10 py-10'>
         <div className='flex items-center mb-6 gap-2'>
-            <div className='text-primaryOne bg-primaryOne rounded-[8px] text-[1.2rem] bg-opacity-20 p-1'>
+            <div className='text-primaryOne bg-primaryOne rounded-full text-[1rem] bg-opacity-20 p-2'>
                 <GiStarFormation />
             </div>
             <h6 className='text-[1.3rem] font-semibold text-gray-700'>{`Public Repo (${allRepos.length})`}</h6>
@@ -64,11 +63,6 @@ const AllRepos:FC<Props> = ({allRepos}) => {
                         <p className='text-gray-700 py-5'>{(description != null ? description : "No description available" )}</p>
 
                         <div className='flex gap-2'>
-                            <div className='flex gap-1 rounded-[20px] px-[8px] py-[2px] bg-red-400 bg-opacity-20  items-center'>
-                                <FiCornerRightUp className='text-red-400'/>
-                                <p className='text-gray-700 text-[0.8rem] font-semibold'>{score}</p>
-                            </div>
-
                             <div className='flex gap-1 rounded-[20px] px-[8px] py-[2px] bg-green-400 bg-opacity-20  items-center'>
                                 <BiGitRepoForked className='text-green-400'/>
                                 <p className='text-gray-700 text-[0.8rem] font-semibold'>{forks_count}</p>

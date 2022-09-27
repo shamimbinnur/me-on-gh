@@ -8,7 +8,7 @@ import MOGH_text from '../public/svg/MOG-text.svg'
 
 const BelowFooter = () => {
   return (
-    <div className='flex flex-col relative items-center'>
+    <div className='flex flex-col mt-[10px] relative items-center'>
         <div className='mx-auto absolute top-0 left-0'>
             <Image className='w-full h-full  scale-[1.4] ' alt='Squres vector' src={squares_vector} />
         </div>
