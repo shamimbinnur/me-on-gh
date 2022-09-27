@@ -74,9 +74,9 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
   const { name, avatar_url, bio, repos,location, languageBasedRepo, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
   console.log(profileData.star.hasStarred);
 
-  if(profileData.star.hasStarred){
-    return <StarCheck/>
-  }
+  // if(!profileData.star.hasStarred){
+  //   return <StarCheck/>
+  // }
 
   return (
     <div>

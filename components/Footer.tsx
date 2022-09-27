@@ -30,13 +30,17 @@ const Footer:FC<FooterProps> = ({footer})=> {
       <div className='flex w-full px-[10px] py-[40px] flex-col tablet:flex-row gap-y-10 items-center tablet:justify-between bg-cyanDim'>
         <div>
           <h6 className='tablet:text-[22px] laptop:text-[25px] text-primaryTwo font-medium'>Anything in mind? Create an issue!</h6>
-          <p className='tablet:text-[14px] laptop:text-[16px] text-secondary '>Click here.</p>
+          <p className='tablet:text-[14px] laptop:text-[16px] text-secondary '>
+            <a href="https://github.com/shamimbinnur/me-on-gh/issues/new"> Click here.</a>
+          </p>
         </div>
 
         <div className='flex gap-[10px]'>
-          <div className='w-[26px] h-[26px] tablet:w-[28px] laptop:w-[36px] laptop:h-[36px]' >
-            <Image alt='GitHub Icon' src={gitHubIcon} width={36} height={36} />
-          </div>
+          <a href="https://github.com/shamimbinnur/me-on-gh">
+            <div className='w-[26px] h-[26px] tablet:w-[28px] laptop:w-[36px] laptop:h-[36px]' >
+              <Image alt='GitHub Icon' src={gitHubIcon} width={36} height={36} />
+            </div>
+          </a>
           <div className='w-[26px] h-[26px] tablet:w-[28px] laptop:w-[36px] laptop:h-[36px]' >
             <Image alt='TwitterIcon' src={twitterIcon} width={36} height={36} />
 
