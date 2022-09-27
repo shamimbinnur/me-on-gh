@@ -15,11 +15,17 @@ import HeaderForProfile from '../../components/HeaderForProfile'
 import PopularRepo from '../../components/PopularRepo'
 import AllRepos from '../../components/AllRepos'
 import Link from 'next/link'
+import LBR from '../../components/LBR'
+import { redirect } from 'next/dist/server/api-utils'
+import StarCheck from '../../components/StarCheck'
+
 
 
 interface ProfileProps {
   profileData : {
-      hasStarred: boolean,
+      star:{
+        hasStarred: boolean
+      },
       profileData:{
           name: string
           avatar_url: string
@@ -35,19 +41,43 @@ interface ProfileProps {
           email: string
           blog: string
           company: string
-          orgs: string
+          orgs: {
+            login: string
+          }[]
           repos: string[]
           popularRepos: string[]
+          languageBasedRepo: any
       }
   }
 }
 
+interface Props {
+  languageBasedRepo: {
+      Java: Number,
+      javaScript: Number,
+      TypeScript: Number,
+      Css: Number,
+      Go : Number,
+      Kotlin : Number,
+      PHP: Number,
+      cSharp : Number,
+      Swift : Number,
+      R : Number,
+      Ruby : Number,
+      CandCPP: Number,
+      Matlab: Number,
+      Scala: Number,
+  }
+}
 
 const App: NextPage<ProfileProps>= ({profileData}) => {
-  const { name, avatar_url, bio, repos,location, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
-  console.log(profileData);
+  const { name, avatar_url, bio, repos,location, languageBasedRepo, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
+  console.log(profileData.star.hasStarred);
 
-  
+  // if(!profileData.star.hasStarred){
+  //   return <StarCheck/>
+  // }
+
   return (
     <div>
       <Head>
@@ -84,7 +114,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
             </div>
           </div>
           <div className="flex-1">
-            <Link href={html_url}>
+            <Link href={html_url as string}>
               <h1 className="text-gray-700 cursor-pointer transition ease-in-out duration-500 hover:text-primaryOne font-bold text-[2.5rem]">{name}</h1>
             </Link>
             <p className="text-gray-700 font-semibold text-[1rem] my-[10px] max-w-[300px]">{bio}</p>
@@ -92,10 +122,10 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
               {
                 company &&
                 <div className='flex items-center gap-2 group'>
-                  <div className='bg-primaryTwo p-[4px] rounded-full bg-opacity-20 flex items-center justify-center'>
-                    <HiOutlineOfficeBuilding className='text-primaryTwo text-[1rem]' />
+                  <div className='bg-primaryTwo p-[4px] group-hover:bg-opacity-20 group-hover:bg-primaryOne rounded-full bg-opacity-20 flex items-center justify-center'>
+                    <HiOutlineOfficeBuilding className='text-primaryTwo group-hover:text-primaryOne transition ease-in-out duration-300 text-[1rem]' />
                   </div>
-                  <p className="text-gray-600 font-semibold text-[1.1rem]">{"Meta inc"}</p>
+                  <p className="text-gray-600 font-semibold text-[1.1rem]">{company}</p>
                 </div>
               }
               {
@@ -113,18 +143,29 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
                   <div className='bg-primaryTwo p-[4px] group-hover:bg-opacity-20 rounded-full bg-opacity-20 group-hover:bg-primaryOne transition ease-in-out duration-500 flex items-center justify-center'>
                     <BiWorld className='text-primaryTwo group-hover:text-primaryOne transition ease-in-out duration-300 text-[1rem]' />
                   </div>
-                  <p className="text-gray-600 font-semibold text-[1.1rem]">{blog}</p>
+                  <Link rel="noreferrer" target="_blank" href={"https://"+blog} >
+                    <p className="text-gray-600 font-semibold cursor-pointer text-[1.1rem]">{blog}</p>
+                  </Link>
                 </div>
               }
 
               {
-                orgs &&
+                orgs.length > 0 ? (
                 <div className='flex items-center group gap-2'>
                   <div className='bg-primaryTwo p-[4px] group-hover:bg-opacity-20 rounded-full bg-opacity-20 group-hover:bg-primaryOne transition ease-in-out duration-500 flex items-center justify-center'>
                     <GiFamilyHouse className='text-primaryTwo group-hover:text-primaryOne transition ease-in-out duration-300 text-[1rem]' />
                   </div>
-                  <p className="text-gray-600 font-semibold text-[1.1rem]">{"OpenSauced"}</p>
+                  <div className='flex items-center gap-2'>
+                    {
+                      orgs.map(og => (
+                        <div key={og.login}>
+                          <p className="text-gray-600 font-semibold text-[1.1rem]">{og.login}</p>
+                        </div>
+                      ))
+                    }
+                  </div>
                 </div>
+                ): ""
               }
               {
                 followers &&
@@ -143,7 +184,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
           </div>
         </div>
       </div>
-      
+      <LBR languageBasedRepo={languageBasedRepo} />  
       <PopularRepo popularRepos={popularRepos as unknown as [] || []}/>
       <AllRepos allRepos={repos as unknown as [] || []}/>
     </div>
