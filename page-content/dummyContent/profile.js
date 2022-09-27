@@ -1,4 +1,5 @@
 export const profileData = {
+    profileData: {
         "name": "Shamim Bin Nur",
         "avatar_url": "https://avatars.githubusercontent.com/u/48399373?v=4",
         "bio": "I love to build real-life applications and solve their problems.\r\niamshamimbn@gmail.com",
@@ -3507,5 +3508,5 @@ export const profileData = {
                 "count": 0
             }
         ]
-
+    }
 }
