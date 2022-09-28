@@ -9,13 +9,13 @@ const getProfile = async (username: string) => {
     const hasStarred:boolean = starringData.data.some((user: { login: string; }) => user.login == username)
     console.log("Starred ?", hasStarred)
 
-    if(!hasStarred){
-        const profileData = {
-            hasStarred: false,
-            profileData:{}
-        }
-        return profileData
-    }
+    // if(!hasStarred){
+    //     const profileData = {
+    //         hasStarred: false,
+    //         profileData:{}
+    //     }
+    //     return profileData
+    // }
         
     const { data } = await axios.get(`https://api.github.com/users/${username}`)
 

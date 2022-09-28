@@ -15,7 +15,7 @@ interface FooterProps{
 const Footer:FC<FooterProps> = ({footer})=> {
   return (
     <div className='mx-auto bg-skyMOGH rounded-[10px] '>
-      <div className='px-[20px] py-[20px] tablet:py-[50px] tablet:px-[20px] flex justify-center  bg-secondary rounded-[10px]'>
+      <div className='px-[20px] py-[20px] tablet:py-[50px] tablet:px-[20px] flex justify-center  bg-gray-700 rounded-[10px]'>
         <ul className='grid grid-flow-row grid-cols-2 tablet:grid-cols-5 gap-x-10 gap-y-2 text-white font-medium text-[14px] tablet:text-[16px] laptop:text-[18px]'>
         {
           footer.map( nav => (
@@ -41,13 +41,12 @@ const Footer:FC<FooterProps> = ({footer})=> {
               <Image alt='GitHub Icon' src={gitHubIcon} width={36} height={36} />
             </div>
           </a>
-          <div className='w-[26px] h-[26px] tablet:w-[28px] laptop:w-[36px] laptop:h-[36px]' >
+          {/* <div className='w-[26px] h-[26px] tablet:w-[28px] laptop:w-[36px] laptop:h-[36px]' >
             <Image alt='TwitterIcon' src={twitterIcon} width={36} height={36} />
-
           </div>
           <div className='w-[26px] h-[26px] tablet:w-[28px] laptop:w-[36px] laptop:h-[36px]'>
             <Image alt='Facebook Icon' src={fbIcon} width={36} height={36} />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
