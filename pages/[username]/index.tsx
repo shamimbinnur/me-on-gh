@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { profileData } from "../../page-content/dummyContent/profile.js"
 import dpArtwork from "../../public/svg/dpArtwork.svg"
 import { HiOutlineOfficeBuilding, HiLocationMarker } from 'react-icons/hi';
+import { VscFilePdf } from 'react-icons/vsc';
 import { BiWorld } from 'react-icons/bi';
 import { GiFamilyHouse } from 'react-icons/gi';
 import { BsFillPeopleFill } from 'react-icons/bs';
@@ -121,6 +122,23 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
       {
         !neetToGreet &&
         <div>
+          <div className='flex justify-end mr-9'>
+            <PDFDownloadLink document={<ProfilePdf profileData={ profileData.profileData as any}  />} fileName={`${name}_resume`}>
+            {({ blob, url, loading, error }) =>
+              loading ? (
+                <div className=' bg-red-500 flex items-center px-2 py-2 cursor-pointer rounded-xl'>
+                  ...
+                </div>
+              ) :
+              (
+                <div className=' bg-red-500 flex items-center px-2 py-2 cursor-pointer rounded-xl'>
+                  <VscFilePdf className='text-[1.4rem] text-white '/>
+                </div>
+              )
+            }
+            </PDFDownloadLink>
+          </div>
+
           <div className="mobile:py-[20px] tablet:min-h-screen mobile:px-[20px] tablet:px-[30px] lapto:px-[10px] mx-auto max-w-6xl">
             <div className="flex flex-col items-center">
               <div className="relative flex-1 flex justify-center p-10 items-center">
@@ -204,13 +222,6 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
             </div>
           </div>
           <div>
-          {
-            <PDFDownloadLink document={<ProfilePdf profileData={ profileData.profileData as any}  />} fileName={`${name}_resume`}>
-            {({ blob, url, loading, error }) =>
-              loading ? 'Loading document...' : 'Download now!'
-            }
-            </PDFDownloadLink>
-          }
           </div>
           <LBR languageBasedRepo={languageBasedRepo} />  
           <PopularRepo popularRepos={popularRepos as unknown as [] || []}/>
