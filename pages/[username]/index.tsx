@@ -205,7 +205,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
           </div>
           <div>
           {
-            <PDFDownloadLink document={<ProfilePdf profileData={ profileData.profileData as any}  />} fileName="somename.pdf">
+            <PDFDownloadLink document={<ProfilePdf profileData={ profileData.profileData as any}  />} fileName={`${name}_resume`}>
             {({ blob, url, loading, error }) =>
               loading ? 'Loading document...' : 'Download now!'
             }
