@@ -11,7 +11,6 @@ const getMaxUsedLanguage = (lbr: MaxUsedLangProps[]) => {
 
   lbr.forEach(lang => {
     if(lang.count > maxUsedLang.count){
-      console.log("dfgdgdgf")
       maxUsedLang = lang
     }
   });

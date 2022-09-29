@@ -20,6 +20,8 @@ import { redirect } from 'next/dist/server/api-utils'
 import StarCheck from '../../components/StarCheck'
 import Greetings from '../../components/Greetings'
 import { getMaxUsedLanguage } from '../../utils'
+import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer'
+import ProfilePdf from '../../components/ProfilePdf'
 
 
 
@@ -86,7 +88,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
   }, 5000)
 
   const MUL = getMaxUsedLanguage(languageBasedRepo)
-  console.log(MUL)
+
   return (
     <div>
       <Head>
@@ -197,9 +199,18 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
               </div>
     
               <div className='flex justify-self-center my-20'>
-                <GoArrowSmallDown className='text-[2.5rem] text-gray-300 opacity-60'/>
+                <GoArrowSmallDown className='text-[2.5rem] text-orange-500 opacity-90'/>
               </div>
             </div>
+          </div>
+          <div>
+          {
+            <PDFDownloadLink document={<ProfilePdf profileData={ profileData.profileData as any}  />} fileName="somename.pdf">
+            {({ blob, url, loading, error }) =>
+              loading ? 'Loading document...' : 'Download now!'
+            }
+            </PDFDownloadLink>
+          }
           </div>
           <LBR languageBasedRepo={languageBasedRepo} />  
           <PopularRepo popularRepos={popularRepos as unknown as [] || []}/>
