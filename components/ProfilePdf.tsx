@@ -118,7 +118,7 @@ const ProfilePdf:FC <Props> = ({profileData}) => {
 
             {
               languageBasedRepo &&
-              languageBasedRepo.map( repo => (
+              languageBasedRepo.map( (repo: { lang: any; count: any; }) => (
                 <Text style={styles.text16SemiBold}>{`${repo.lang} : ${repo.count}`} </Text>
               ))
             }
