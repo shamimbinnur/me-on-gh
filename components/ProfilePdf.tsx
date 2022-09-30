@@ -201,7 +201,7 @@ const ProfilePdf:FC <Props> = ({profileData}) => {
             }
             {
               orgs.length > 0  ?( 
-          	  <Text style={styles.text14SemiBold} > Organizations:
+          	  <Text style={styles.text14SemiBold} >Organizations:
                {
                 orgs.map( og => (
                   (og.login+ ",  ")
@@ -219,7 +219,7 @@ const ProfilePdf:FC <Props> = ({profileData}) => {
           {
             popularRepos &&
             popularRepos.map( ({name,forks_count, topics, stargazers_count, language, html_url, description, score}, index) => (
-              <View style={{marginTop: "5px", marginBottom: "5px"}}>
+              <View key={name+html_url} style={{marginTop: "5px", marginBottom: "5px"}}>
                 <View style={styles.repoCard}>
                   <Text style={styles.text14SemiBold}>Name: {name || ""} </Text>
                   

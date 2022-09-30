@@ -84,11 +84,11 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
   //   return <StarCheck/>
   // }
 
+  const MUL = getMaxUsedLanguage(languageBasedRepo)
   setTimeout(() => {
     setNeetToGreet(false)
-  }, 5000)
+  }, 4000)
 
-  const MUL = getMaxUsedLanguage(languageBasedRepo)
 
   return (
     <div>
@@ -115,7 +115,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
       <HeaderForProfile/>
 
       {
-        neetToGreet && languageBasedRepo[0].count > 0 &&
+        neetToGreet &&
         <Greetings greetingsData={{language: MUL, userInfo: { name } }}/>
       }
 
