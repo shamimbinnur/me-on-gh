@@ -33,6 +33,7 @@ interface ProfileProps {
       },
       profileData:{
           name: string
+          login: string,
           avatar_url: string
           bio: string
           public_repos: string

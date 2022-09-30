@@ -44,7 +44,7 @@ const getProfile = async (username: string) => {
             company: data.company,
             orgs: orgs,
             repos: unsortedRepos,
-            popularRepos: sortedRepos.slice(0,4),
+            popularRepos: sortedRepos.slice(0,6),
             languageBasedRepo: languageBasedRepo,
         }
     }
