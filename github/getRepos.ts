@@ -22,6 +22,7 @@ export default getRepos;
 
 const getLanguaseBasedRepo = (repo: []) => {
     let java = 0;
+    let python = 0;
     let javaScript = 0;
     let typeScript = 0;
     let css = 0;
@@ -39,7 +40,8 @@ const getLanguaseBasedRepo = (repo: []) => {
     repo.forEach((repo: { language: string; }) => {
         if (repo.language == null) return;
         else if (repo.language.toLowerCase() === "java") java += 1;
-        if (repo.language.toLowerCase() === "javascript") javaScript += 1;
+        else if (repo.language.toLowerCase() === "python") python += 1;
+        else if (repo.language.toLowerCase() === "javascript") javaScript += 1;
         else if (repo.language.toLowerCase() === "typescript") typeScript += 1;
         else if (repo.language.toLowerCase() === "css") css += 1;
         else if (repo.language.toLowerCase() === "go") go += 1;
@@ -58,6 +60,10 @@ const getLanguaseBasedRepo = (repo: []) => {
         {
             lang: "Java",
             count: java,
+        },
+        {
+            lang: "Python",
+            count: python,
         },
         {
             lang: "JavaScript",
@@ -87,6 +93,10 @@ const getLanguaseBasedRepo = (repo: []) => {
         {
             lang: "cSharp",
             count: cSharp,
+        },
+        {
+            lang: "Swift",
+            count: swift,
         },
         {
             lang: "R",
