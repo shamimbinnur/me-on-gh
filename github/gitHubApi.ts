@@ -9,13 +9,13 @@ const getProfile = async (username: string) => {
     const hasStarred:boolean = starringData.data.some((user: { login: string; }) => user.login == username)
     console.log("Starred ?", hasStarred)
 
-    if(!hasStarred){
-        const profileData = {
-            hasStarred: false,
-            profileData:{}
-        }
-        return profileData
-    }
+    // if(!hasStarred){
+    //     const profileData = {
+    //         hasStarred: false,
+    //         profileData:{}
+    //     }
+    //     return profileData
+    // }
         
     const { data } = await axios.get(`https://api.github.com/users/${username}`)
 
@@ -29,6 +29,7 @@ const getProfile = async (username: string) => {
         },
         profileData:{
             name: data.name,
+            login: data.login,
             avatar_url: data.avatar_url,
             bio: data.bio,
             public_repos: data.public_repos,
@@ -44,7 +45,7 @@ const getProfile = async (username: string) => {
             company: data.company,
             orgs: orgs,
             repos: unsortedRepos,
-            popularRepos: sortedRepos.slice(0,4),
+            popularRepos: sortedRepos.slice(0,6),
             languageBasedRepo: languageBasedRepo,
         }
     }
