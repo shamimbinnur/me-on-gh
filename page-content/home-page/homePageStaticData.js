@@ -3,7 +3,7 @@ const homePageStaticData = {
         title: "Me on GitHub | MOG",
         metaDesc: " Me on GH(MOG) allows you to Share and Export your GitHub profile like a resume!",
         url: "localhost",
-        image: ""
+        image: "/mog-meta.png"
     },
     headerNav: [
         {   
