@@ -1,9 +1,9 @@
 const homePageStaticData = {
     seo:{
         title: "Me on GitHub | MOG",
-        metaDesc: " Me on GH(MOG) allows you to Share and Export your GitHub profile like a resume!",
+        metaDesc: " Me on GitHub(MOG) allows you to Share and Export your GitHub profile like a resume!",
         url: "localhost",
-        image: ""
+        image: "/mogMeta.png",
     },
     headerNav: [
         {   
