@@ -207,8 +207,8 @@ const ProfilePdf:FC <Props> = ({profileData}) => {
           </Text>
           
           <View style={{marginTop: "8px"}}>
-            <Text style={styles.text12}>GitHub profile: Since {html_url || ""}</Text>
-            <Text style={styles.text12}>MOG profile: Since {`www.meongh.com/${login}` || ""}</Text>
+            <Text style={styles.text12}>GitHub profile: {html_url || ""}</Text>
+            <Text style={styles.text12}>MOG profile: {`www.meongh.com/${login}` || ""}</Text>
             <Text style={styles.text12}>On GitHub: Since {moment(created_at).format("Do MMM YY") || ""}</Text>
           	<Text style={styles.text12}>Followers: {followers} </Text>
           </View>

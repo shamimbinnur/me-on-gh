@@ -29,6 +29,7 @@ const getProfile = async (username: string) => {
         },
         profileData:{
             name: data.name,
+            login: data.login,
             avatar_url: data.avatar_url,
             bio: data.bio,
             public_repos: data.public_repos,

@@ -4,6 +4,7 @@ export const profileData = {
     },
     profileData: {
             "name": "Shamim Bin Nur",
+            "login": "shamimbinnur",
             "avatar_url": "https://avatars.githubusercontent.com/u/48399373?v=4",
             "bio": "I love to build real-life applications and solve their problems.\r\niamshamimbn@gmail.com",
             "public_repos": 45,
