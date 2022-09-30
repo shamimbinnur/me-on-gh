@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { homePageStaticData } from '../../page-content/home-page/homePageStaticData'
 import { getProfile } from '../../github/gitHubApi'
 import Image from 'next/image'
-import { profileData } from "../../page-content/dummyContent/profile.js"
+// import { profileData } from "../../page-content/dummyContent/profile.js"
 import dpArtwork from "../../public/svg/dpArtwork.svg"
 import { HiOutlineOfficeBuilding, HiLocationMarker } from 'react-icons/hi';
 import { VscFilePdf } from 'react-icons/vsc';
@@ -233,7 +233,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 }
 
 export async function getServerSideProps(context: any) {
-  // const profileData = await getProfile(context.params.username)
+  const profileData = await getProfile(context.params.username)
 
   return {
     props: {
