@@ -5,8 +5,8 @@ export interface MaxUsedLangProps {
 
 const getMaxUsedLanguage = (lbr: MaxUsedLangProps[]) => {
   let maxUsedLang = {
-    lang: lbr[0].lang,
-    count: lbr[0].count,
+    lang: "",
+    count: 0,
   }
 
   lbr.forEach(lang => {
@@ -18,7 +18,8 @@ const getMaxUsedLanguage = (lbr: MaxUsedLangProps[]) => {
 }
 
 const getArticles = (word: string) => {
-  if(word.toLocaleLowerCase().startsWith("a")) return "an"
+  if(word === "") return "an"
+  else if(word.toLocaleLowerCase().startsWith("a")) return "an"
   else if(word.toLocaleLowerCase().startsWith("e")) return "an"
   else if(word.toLocaleLowerCase().startsWith("i")) return "an"
   else if(word.toLocaleLowerCase().startsWith("o")) return "an"

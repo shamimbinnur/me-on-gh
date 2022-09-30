@@ -26,6 +26,7 @@ const getLanguaseBasedRepo = (repo: []) => {
     let javaScript = 0;
     let typeScript = 0;
     let css = 0;
+    let html = 0;
     let go = 0;
     let kotlin = 0;
     let php = 0;
@@ -43,6 +44,7 @@ const getLanguaseBasedRepo = (repo: []) => {
         else if (repo.language.toLowerCase() === "python") python += 1;
         else if (repo.language.toLowerCase() === "javascript") javaScript += 1;
         else if (repo.language.toLowerCase() === "typescript") typeScript += 1;
+        else if (repo.language.toLowerCase() === "css") html += 1;
         else if (repo.language.toLowerCase() === "css") css += 1;
         else if (repo.language.toLowerCase() === "go") go += 1;
         else if (repo.language.toLowerCase() === "kotlin") kotlin += 1;
@@ -72,6 +74,11 @@ const getLanguaseBasedRepo = (repo: []) => {
         {
             lang: "TypeScript",
             count: typeScript,
+        },
+        {
+            lang: "HTML",
+            count: html,
+
         },
         {
             lang: "Css",
@@ -107,7 +114,7 @@ const getLanguaseBasedRepo = (repo: []) => {
             count: ruby,
         },
         {
-            lang: "CandCPP",
+            lang: "C/CPP",
             count: cAndCPP,
         },
         {
