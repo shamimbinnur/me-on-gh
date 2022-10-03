@@ -24,6 +24,7 @@ import { getMaxUsedLanguage } from '../../utils'
 import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer'
 import ProfilePdf from '../../components/ProfilePdf'
 import ProfileInfo from '../../components/ProfileInfo'
+import RepoContainer from '../../components/RepoContainer'
 
 
 
@@ -113,8 +114,9 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
         <meta property="twitter:description" content={bio} />
         <meta property="twitter:image" content={homePageStaticData.seo.url} />
       </Head>
-        <HeaderForProfile/>
+      <HeaderForProfile/>
       <ProfileInfo/>
+      <RepoContainer/>
     </div>
   )
 }
