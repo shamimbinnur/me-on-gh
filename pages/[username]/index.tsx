@@ -23,6 +23,7 @@ import Greetings from '../../components/Greetings'
 import { getMaxUsedLanguage } from '../../utils'
 import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer'
 import ProfilePdf from '../../components/ProfilePdf'
+import ProfileInfo from '../../components/ProfileInfo'
 
 
 
@@ -103,17 +104,17 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
         <meta property="og:url" content={homePageStaticData.seo.url} />
         <meta property="og:title" content={name} />
         <meta property="og:description" content={bio} />
-        <meta property="og:image" content={avatar_url} />
+        <meta property="og:image" content={homePageStaticData.seo.url} />
 
         {/* <!-- Twitter --> */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={homePageStaticData.seo.url} />
         <meta property="twitter:title" content={name} />
         <meta property="twitter:description" content={bio} />
-        <meta property="twitter:image" content={avatar_url} />
+        <meta property="twitter:image" content={homePageStaticData.seo.url} />
       </Head>
-
-      
+        <HeaderForProfile/>
+      <ProfileInfo/>
     </div>
   )
 }
