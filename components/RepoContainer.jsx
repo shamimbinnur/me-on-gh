@@ -4,7 +4,7 @@ const RepoContainer = () => {
     const repos = [1,2,3,4,5,6]
   return (
     <div className="p-4 tablet:p-10">
-        <div className="flex gap-x-4 py-4">
+        <div className="flex flex-wrap gap-x-4 gap-y-4 py-4">
             <div className="flex items-center gap-2 pr-4 border-r-2">
                 <div className="w-3 h-3 rounded-full bg-gray-400 "></div>
                 <p className="font-semibold text-lg text-gray-500">Popular</p>

@@ -115,7 +115,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
         <meta property="twitter:image" content={homePageStaticData.seo.url} />
       </Head>
       <HeaderForProfile/>
-      <ProfileInfo/>
+      <ProfileInfo profileData={profileData} />
       <RepoContainer/>
     </div>
   )
