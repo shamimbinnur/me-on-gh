@@ -40,6 +40,25 @@ export interface LRBProps {
   count: number
 }
 
+const colors = [
+  "#628E90",
+  "#FF7C7C",
+  "#905E96",
+  "#DFF6FF",
+  "#7895B2",
+  "#D8D8D8",
+  "#9FC9F3",
+  "#B9FFF8",
+  "#96E5D1",
+  "#7FB77E",
+  "#E9DAC1",
+  "#8FE3CF",
+  "#400D51",
+  "#FF9551",
+  "#3AB0FF",
+  "#7F8487",
+]
+
 const ProfileInfo:FC <Props> = ({profileData}) => {
   const { name, avatar_url, bio, repos,location, languageBasedRepo, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
   const filteredLBR = languageBasedRepo.filter( item => item.count > 0)
@@ -149,9 +168,9 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
 
                   <div className="flex flex-col items-start py-2">
                     {
-                      filteredLBR.map( ({ lang, count }) => (
+                      filteredLBR.map( ({ lang, count }, i) => (
                         <div key={lang} className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
-                          <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                          <div style={{backgroundColor: `${colors[i]}`}} className="w-2 h-2 rounded-full"></div>
                           <p>{`${lang} (${count})`}</p>
                         </div>
 
