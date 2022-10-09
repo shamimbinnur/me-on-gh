@@ -1,4 +1,8 @@
+import { PDFDownloadLink } from '@react-pdf/renderer'
 import React, { FC } from 'react'
+import { VscFilePdf } from 'react-icons/vsc'
+import DoughnutChart from './DoughnutChart'
+import ProfilePdf from './ProfilePdf'
 
 interface Props {
   profileData : {
@@ -48,6 +52,20 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
             {/* Left portion */}
             <div className="bg-white min-w-0 tablet:min-w-[400px] rounded-xl border-[1px] flex-1 p-5 border-gray-100">
               <div className="flex justify-end">
+                {/* <PDFDownloadLink document={<ProfilePdf profileData={ profileData.profileData as any}  />} fileName={`${name}_resume`}>
+                {({ blob, url, loading, error }) =>
+                  loading ? (
+                    <div className=' bg-red-500 flex items-center px-2 py-2 cursor-pointer rounded-xl'>
+                      ...
+                    </div>
+                  ) :
+                  (
+                    <div className=' bg-red-500 flex items-center px-2 py-2 cursor-pointer rounded-xl'>
+                      <VscFilePdf className='text-[1.4rem] text-white '/>
+                    </div>
+                  )
+                }
+                </PDFDownloadLink> */}
                 <p className="font-bold text-sm text-primary" >PDF</p>
               </div>
               <div className="flex items-center justify-center">
@@ -116,8 +134,8 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
             {/* Right portion */}
             <div className="bg-white min-w-0 tablet:min-w-[400px] flex flex-col tablet:flex-row justify-center gap-x-4 gap-y-5 items-center rounded-xl border-[1px] flex-1 p-5 border-gray-100">
                 <div className="flex flex-1 justify-center">
-                  <div className="bg-cyan-500 w-[160px] h-[160px] p-2 rounded-full ">
-                      <div className="bg-white w-full h-full rounded-full "></div>
+                  <div className="bg-cyan-500 w-[160px] h-[160px] p-0 bg-opacity-0 rounded-full ">
+                    <DoughnutChart lbr={filteredLBR}/>
                   </div>
                 </div>
 
