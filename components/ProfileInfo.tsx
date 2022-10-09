@@ -26,13 +26,19 @@ interface Props {
           }[]
           repos: string[]
           popularRepos: string[]
-          languageBasedRepo: any
+          languageBasedRepo: LRBProps[]
       }
   }
 }
 
+export interface LRBProps {
+  lang: string,
+  count: number
+}
+
 const ProfileInfo:FC <Props> = ({profileData}) => {
   const { name, avatar_url, bio, repos,location, languageBasedRepo, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
+  const filteredLBR = languageBasedRepo.filter( item => item.count > 0)
 
   return (
     <div className='p-4 tablet:p-10'>
@@ -79,6 +85,13 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
                         </div>
                       }
                       {
+                        orgs.length > 0  &&
+                        <div className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                          <p>{orgs.map(org => (`${org.login} `))}</p>
+                        </div>
+                      }
+                      {
                         followers  && 
                         <div className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
                           <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
@@ -112,27 +125,20 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
                   <div>
                     <p className="text-gray-500 font-semibold mb-1  ">Total public repo</p>
                     <div className="w-full p-1 text-center max-w-[200px] bg-cyan-400 rounded-lg bg-opacity-30 ">
-                      <p className="text-cyan-600 font-semibold text-lg " >23</p>
+                      <p className="text-cyan-600 font-semibold text-lg " >{repos.length || 0}</p>
                     </div>
                   </div>
 
                   <div className="flex flex-col items-start py-2">
-                    <div className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
-                      <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                      <p>Python(12)</p>
-                    </div>
-                    <div className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
-                      <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                      <p>JavaScript(44)</p>
-                    </div>
-                    <div className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
-                      <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                      <p>Ruby(33)</p>
-                    </div>
-                    <div className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
-                      <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                      <p>TypeScript(43)</p>
-                    </div>
+                    {
+                      filteredLBR.map( ({ lang, count }) => (
+                        <div key={lang} className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                          <p>{`${lang} (${count})`}</p>
+                        </div>
+
+                      ))
+                    }
                   </div>
                 </div>
             </div>
