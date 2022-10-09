@@ -132,14 +132,14 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
             </div>
 
             {/* Right portion */}
-            <div className="bg-white min-w-0 tablet:min-w-[400px] flex flex-col tablet:flex-row justify-center gap-x-4 gap-y-5 items-center rounded-xl border-[1px] flex-1 p-5 border-gray-100">
+            <div className="bg-white min-w-0 tablet:min-w-[400px] flex flex-col tablet:flex-row gap-x-4 gap-y-5 tablet:items-center rounded-xl border-[1px] flex-1 p-5 border-gray-100">
                 <div className="flex flex-1 justify-center">
                   <div className="bg-cyan-500 w-[160px] h-[160px] p-0 bg-opacity-0 rounded-full ">
                     <DoughnutChart lbr={filteredLBR}/>
                   </div>
                 </div>
 
-                <div className="border-l-2 flex-1  border-l-gray-200 py-4 px-4 ">
+                <div className="border-l-2 flex-1  border-l-gray-100 py-4 px-4 ">
                   <div>
                     <p className="text-gray-500 font-semibold mb-1  ">Total public repo</p>
                     <div className="w-full p-1 text-center max-w-[200px] bg-cyan-400 rounded-lg bg-opacity-30 ">
