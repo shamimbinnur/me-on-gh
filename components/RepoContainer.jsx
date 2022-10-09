@@ -4,20 +4,20 @@ const RepoContainer = () => {
     const repos = [1,2,3,4,5,6]
   return (
     <div className="p-4 tablet:p-10">
-        <div className="flex flex-wrap gap-x-4 gap-y-4 py-4">
-            <div className="flex items-center gap-2 pr-4 border-r-2">
+        <div className="flex flex-wrap gap-x-2 gap-y-4 py-4">
+            <div className="flex items-center gap-2 pr-4 border-2 rounded-lg py-1 px-2 ">
                 <div className="w-3 h-3 rounded-full bg-gray-400 "></div>
-                <p className="font-semibold text-lg text-gray-500">Popular</p>
+                <p className="font-semibold text-sm text-gray-500">Popular</p>
             </div>
 
-            <div className="flex items-center gap-2 pr-4 border-r-2">
-                <div className="w-3 h-3 rounded-full bg-primary"></div>
-                <p className="font-semibold text-lg text-primary ">JavaScript</p>
+            <div className="flex items-center gap-2 pr-4 border-2 rounded-lg py-1 px-2 ">
+                <div className="w-3 h-3 rounded-full bg-gray-400"></div>
+                <p className="font-semibold text-sm text-gray-500 ">JavaScript</p>
             </div>
 
-            <div className="flex items-center gap-2 pr-4 border-r-2">
-                <div className="w-3 h-3 rounded-full bg-gray-400 "></div>
-                <p className="font-semibold text-lg text-gray-500">TypeScript</p>
+            <div className="flex items-center gap-2 pr-4 border-2 rounded-lg py-1 px-2 bg-opacity-90 cursor-pointer bg-primary ">
+                <div className="w-3 h-3 rounded-full bg-white "></div>
+                <p className="font-semibold text-sm text-white ">TypeScript</p>
             </div>
         </div>
         <div className="p-8 bg-bgWhite rounded-xl">

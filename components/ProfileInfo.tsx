@@ -60,7 +60,7 @@ const colors = [
 ]
 
 const ProfileInfo:FC <Props> = ({profileData}) => {
-  const { name, avatar_url, bio, repos,location, languageBasedRepo, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
+  const { name, avatar_url, bio, login, repos,location, languageBasedRepo, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
   const filteredLBR = languageBasedRepo.filter( item => item.count > 0)
 
   return (
@@ -99,7 +99,7 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
 
                   <div className="border-l-gray-100 flex-1 flex-col py-4 justify-center  border-l-2 px-4 my-8 ">
                     <div className="flex flex-col items-start py-2">
-                      <h1 className='text-secondary font-semibold text-3xl'>{name || ""}</h1>
+                      <h1 className='text-secondary font-semibold mb-2 text-3xl'>{name || ""}</h1>
                       {
                         company  && 
                         <div className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
@@ -118,7 +118,14 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
                         blog  && 
                         <div className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
                           <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                          <p>{blog || ""}</p>
+                          <a href={`https://${blog}`}>{blog}</a>
+                        </div>
+                      }
+                      {
+                        login  && 
+                        <div className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+                          <a href={`https://github.com/${login}`}>{`github.com/${login}`}</a>
                         </div>
                       }
                       {
@@ -132,7 +139,7 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
                         followers  && 
                         <div className='flex justify-center items-center gap-2 text-gray-400 font-medium text-sm'>
                           <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
-                          <p>{followers || 0}</p>
+                          <p>{followers +" followers" || 0}</p>
                         </div>
                       }
                     </div>
