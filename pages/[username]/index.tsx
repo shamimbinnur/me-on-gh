@@ -52,31 +52,31 @@ interface ProfileProps {
           orgs: {
             login: string
           }[]
-          repos: string[]
-          popularRepos: string[]
+          repos: []
+          popularRepos: []
           languageBasedRepo: any
       }
   }
 }
 
-interface Props {
-  languageBasedRepo: {
-      Java: Number,
-      javaScript: Number,
-      TypeScript: Number,
-      Css: Number,
-      Go : Number,
-      Kotlin : Number,
-      PHP: Number,
-      cSharp : Number,
-      Swift : Number,
-      R : Number,
-      Ruby : Number,
-      CandCPP: Number,
-      Matlab: Number,
-      Scala: Number,
-  }
-}
+// export interface Props {
+//   languageBasedRepo: {
+//       Java: Number,
+//       javaScript: Number,
+//       TypeScript: Number,
+//       Css: Number,
+//       Go : Number,
+//       Kotlin : Number,
+//       PHP: Number,
+//       cSharp : Number,
+//       Swift : Number,
+//       R : Number,
+//       Ruby : Number,
+//       CandCPP: Number,
+//       Matlab: Number,
+//       Scala: Number,
+//   }
+// }
 
 const App: NextPage<ProfileProps>= ({profileData}) => {
   const { name, avatar_url, bio, repos,location, languageBasedRepo, blog, followers, orgs, company, popularRepos, html_url } = profileData.profileData;
@@ -116,7 +116,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
       </Head>
       <HeaderForProfile/>
       <ProfileInfo profileData={profileData} />
-      <RepoContainer/>
+      <RepoContainer repoData={{popularRepos, repos, languageBasedRepo}}/>
     </div>
   )
 }

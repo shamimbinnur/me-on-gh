@@ -37,7 +37,7 @@ const DoughnutChart:FC<LRBProps> = ({lbr}) => {
       backgroundColor: colors.slice(0, lbr.length)
     }]
   }
-   console.log(lbr)
+
   return (
     <div>
       <Doughnut data={data}/>
