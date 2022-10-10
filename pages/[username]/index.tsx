@@ -1,32 +1,13 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import { homePageStaticData } from '../../page-content/home-page/homePageStaticData'
 import { getProfile } from '../../github/gitHubApi'
-import Image from 'next/image'
-import { profileData } from "../../page-content/dummyContent/profile.js"
-import dpArtwork from "../../public/svg/dpArtwork.svg"
-import { HiOutlineOfficeBuilding, HiLocationMarker } from 'react-icons/hi';
-import { VscFilePdf } from 'react-icons/vsc';
-import { BiWorld } from 'react-icons/bi';
-import { GiFamilyHouse } from 'react-icons/gi';
-import { BsFillPeopleFill } from 'react-icons/bs';
-import { GoArrowSmallDown } from 'react-icons/go';
+// import { profileData } from "../../page-content/dummyContent/profile.js"
 import HeaderForProfile from '../../components/HeaderForProfile'
-import PopularRepo from '../../components/PopularRepo'
-import AllRepos from '../../components/AllRepos'
-import Link from 'next/link'
-import LBR from '../../components/LBR'
-import { redirect } from 'next/dist/server/api-utils'
-import StarCheck from '../../components/StarCheck'
-import Greetings from '../../components/Greetings'
 import { getMaxUsedLanguage } from '../../utils'
-import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer'
-import ProfilePdf from '../../components/ProfilePdf'
 import ProfileInfo from '../../components/ProfileInfo'
 import RepoContainer from '../../components/RepoContainer'
-
-
 
 interface ProfileProps {
   profileData : {
@@ -122,7 +103,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 }
 
 export async function getServerSideProps(context: any) {
-  // const profileData = await getProfile(context.params.username)
+  const profileData = await getProfile(context.params.username)
 
   return {
     props: {
