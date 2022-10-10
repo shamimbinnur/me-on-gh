@@ -1,5 +1,7 @@
 import React, { FC, useState } from 'react'
-
+import { AiFillStar } from 'react-icons/ai'
+import { BiGitRepoForked, BiCode } from 'react-icons/bi'
+import { FiCode } from 'react-icons/fi'
 interface Props {
     repoData: {
         repos: any
@@ -53,40 +55,38 @@ const RepoContainer:FC<Props> = ({repoData}) => {
                     {
                         currentRepos.map( (repo: any, id: React.Key | null | undefined ) => (
                             <div key={id} className="border-gray-100 bg-white rounded-md p-3 border-[1px]">
-                                <div className="flex justify-end">
-                                    <div className=" p-2 w-[30px] h-[30px] bg-primary bg-opacity-30 flex items-center justify-center rounded-full">
-                                        <p className="text-md font-semibold text-primary" >12</p>
-                                    </div>
-                                </div>
-
                                 <div>
-                                    <h1>{repo.name}</h1>
+                                    <h1 className="uppercase text-md font-semibold text-secondary">{repo.name}</h1>
 
-                                    <div className="flex flex-wrap my-2 items-center gap-x-4">
+                                    <div className="flex flex-wrap mt-2 mb-4 items-center gap-x-4">
                                         {
                                             repo.topics.length > 0 &&
                                             repo.topics.map( (topic: string | null | undefined) => (
                                                 <div key={topic} className="flex gap-2 items-center">
-                                                    <div className="w-[10px] h-[10px] bg-primary rounded-full"></div>
+                                                    <div className="w-[5px] h-[5px] bg-primary rounded-full"></div>
                                                     <p className="text-xs text-gray-500">{topic}</p>
                                                 </div>
                                             ))
                                         }
                                     </div>
+                                    
+                                    {
+                                        repo.description
+                                        ? <p className="text-md text-gray-500">{repo.description}</p>
+                                        : <p className="text-md text-gray-300">No description is available</p>
+                                    }
 
-                                    <p className="text-md text-gray-500">{repo.description}</p>
-
-                                    <div className="flex my-2 items-center flex-wrap gap-x-4">
-                                        <div className="flex gap-2 items-center">
-                                            <div className="w-[14px] h-[14px] bg-primary rounded-sm"></div>
+                                    <div className="flex my-3 items-center flex-wrap gap-x-4">
+                                        <div className="flex items-center justify-center text-sm gap-1 text-primary">
+                                            <BiCode/>
                                             <p className="text-xs text-gray-500">{repo.language}</p>
                                         </div>
-                                        <div className="flex gap-2 items-center">
-                                            <div className="w-[14px] h-[14px] bg-primary rounded-sm"></div>
+                                        <div className="flex items-center justify-center text-sm gap-1 text-primary">
+                                            <BiGitRepoForked/>
                                             <p className="text-xs text-gray-500">{repo.forks_count}</p>
                                         </div>
-                                        <div className="flex gap-2 items-center">
-                                            <div className="w-[14px] h-[14px] bg-primary rounded-sm"></div>
+                                        <div className="flex items-center justify-center text-sm gap-1 text-primary">
+                                            <AiFillStar/>
                                             <p className="text-xs text-gray-500">{repo.stargazers_count}</p>
                                         </div>
                                     </div>
