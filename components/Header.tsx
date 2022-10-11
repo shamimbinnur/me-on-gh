@@ -16,18 +16,14 @@ interface HeaderProps{
 
 const Header:FC<HeaderProps> = ({navs}) => {
   return (
-    <div className='relative max-w-6xl mx-auto'>
-        {/* <div className='absolute top-[-760px] left-[-440px] scale-[1] ' >
-           <Image src={deco} alt={"deco vector graphic"}/>
-        </div> */}
-        
-        <div className='flex items-center px-5 justify-between  '>
-            <div className='flex gap-[15px] items-center'>
+    <div className='relative mx-auto'>        
+        <div className='flex items-center justify-between  '>
+            <div className='flex gapx-x-2 items-center'>
                 <div className='flex justify-center w-[50px] h-[50px] tablet:w-[60px] tablet:h-[60px]'>
-                    <Image src={MOG} width={60} height={60} alt="MOG Logo" />
+                    <Image src={MOG} width={50} height={50} alt="MOG Logo" />
                 </div>
                 <div className='flex justify-center w-[110px] h-[110px] tablet:w-[160px] tablet:h-[160px]'>
-                    <Image src={MOG_text} width={160} height={60} alt="MOG Logo" />
+                    <Image src={MOG_text} width={150} height={50} alt="MOG Logo" />
                 </div>
             </div>
 
@@ -41,7 +37,6 @@ const Header:FC<HeaderProps> = ({navs}) => {
                 </ul>
             </div>
         </div>
-
     </div>
   )
 }

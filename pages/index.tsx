@@ -77,7 +77,7 @@ const Home: NextPage = () => {
 
       <SignIn state={{showSignInModal, setShowSignInModal}} />
       
-      <div className='mobile:px-[5px] tablet:px-[30px] lapto:px-[10px]'>
+      <div className='mobile:px-[5px] tablet:px-[30px] mx-auto max-w-7xl lapto:px-[10px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
 
         <Hero heroData={homePageStaticData.hero as unknown as hero || {}} />
@@ -86,7 +86,6 @@ const Home: NextPage = () => {
 
         {/* <Footer footer={ homePageStaticData.footer as footer || [] } /> */}
       </div>
-      <BelowFooter/>
     </div>
   )
 }
