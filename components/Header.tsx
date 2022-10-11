@@ -28,7 +28,7 @@ const Header:FC<HeaderProps> = ({navs}) => {
             </div>
 
             <div>
-                <ul className='tablet:flex hidden text-[15px] font-semibold gap-[20px] tracking-tight text-grayMOG'>
+                <ul className='tablet:flex hidden text-[15px] font-semibold gap-[20px] tracking-tight text-secondary'>
                     {
                         navs.map( nav => (
                             <li key={nav.link}> <Link href={nav.link}><a>{nav.placeholder}</a></Link> </li>

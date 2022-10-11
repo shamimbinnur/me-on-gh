@@ -8,6 +8,7 @@ import Hero from '../components/Hero'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
 import SignIn from '../components/modals/SignIn'
 import { useState } from 'react'
+import CTA from '../components/CTA'
 
 type navs= [
     {
@@ -79,8 +80,8 @@ const Home: NextPage = () => {
       
       <div className='mobile:px-[5px] tablet:px-[30px] mx-auto max-w-7xl lapto:px-[10px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
-
         <Hero heroData={homePageStaticData.hero as unknown as hero || {}} />
+        <CTA/>
 
         {/* <Feature features={ homePageStaticData.feature as features || [] }/> */}
 
