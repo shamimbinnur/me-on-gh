@@ -80,11 +80,11 @@ const Home: NextPage = () => {
       <div className='mobile:px-[5px] tablet:px-[30px] lapto:px-[10px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
 
-        <Hero state={{setShowSignInModal}} heroData={homePageStaticData.hero as unknown as hero || {}} />
+        <Hero heroData={homePageStaticData.hero as unknown as hero || {}} />
 
-        <Feature features={ homePageStaticData.feature as features || [] }/>
+        {/* <Feature features={ homePageStaticData.feature as features || [] }/> */}
 
-        <Footer footer={ homePageStaticData.footer as footer || [] } />
+        {/* <Footer footer={ homePageStaticData.footer as footer || [] } /> */}
       </div>
       <BelowFooter/>
     </div>
