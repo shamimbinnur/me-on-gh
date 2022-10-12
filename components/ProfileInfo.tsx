@@ -3,6 +3,8 @@ import React, { FC } from 'react'
 import { VscFilePdf } from 'react-icons/vsc'
 import DoughnutChart from './DoughnutChart'
 import ProfilePdf from './ProfilePdf'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { AiOutlineLink } from 'react-icons/ai'
 
 interface Props {
   profileData : {
@@ -71,21 +73,12 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
             {/* Left portion */}
             <div className="bg-white min-w-0 tablet:min-w-[400px] rounded-xl border-[1px] flex-1 p-5 border-gray-100">
               <div className="flex justify-end">
-                {/* <PDFDownloadLink document={<ProfilePdf profileData={ profileData.profileData as any}  />} fileName={`${name}_resume`}>
-                {({ blob, url, loading, error }) =>
-                  loading ? (
-                    <div className=' bg-red-500 flex items-center px-2 py-2 cursor-pointer rounded-xl'>
-                      ...
+                <CopyToClipboard text={`https://meongh.com/${login}`}>
+                    <div className="flex items-center gap-x-2 cursor-pointer">
+                      <AiOutlineLink/>
+                      <p className="font-bold text-sm text-primary transition-all hover:text-blue-500" >Get Url</p>
                     </div>
-                  ) :
-                  (
-                    <div className=' bg-red-500 flex items-center px-2 py-2 cursor-pointer rounded-xl'>
-                      <VscFilePdf className='text-[1.4rem] text-white '/>
-                    </div>
-                  )
-                }
-                </PDFDownloadLink> */}
-                <p className="font-bold text-sm text-primary" >PDF</p>
+                </CopyToClipboard>
               </div>
               <div className="flex items-center justify-center">
                 <div className="flex flex-col tablet:flex-row justify-center gap-x-4 items-center">
