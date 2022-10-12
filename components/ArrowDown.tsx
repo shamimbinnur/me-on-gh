@@ -4,7 +4,7 @@ import { BiDownArrow } from 'react-icons/bi'
 
 const ArrowDown: FC = () => {
   return (
-    <div className="flex justify-center content-center items-center h-28">
+    <div className="flex justify-center content-center items-center h-10 tablet:h-28">
         <motion.div
         transition={{
             duration: 2.5,
