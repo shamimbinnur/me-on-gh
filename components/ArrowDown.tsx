@@ -7,7 +7,7 @@ const ArrowDown: FC = () => {
     <div className="flex justify-center content-center items-center h-28">
         <motion.div
         transition={{
-            duration: 1.5,
+            duration: 2.5,
             yoyo: Infinity,
             stiffness: 500
         }}
