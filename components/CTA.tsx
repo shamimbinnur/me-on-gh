@@ -15,7 +15,7 @@ const CTA:FC = () => {
   }
   return (
     
-    <div className="flex flex-col justify-center items-center min-h-[30vh]">
+    <div className="flex flex-col justify-center items-center h-[10vh] laptop:h-[30vh]">
         <div className="py-10">
           {
             loading && 
