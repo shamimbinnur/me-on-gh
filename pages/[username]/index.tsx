@@ -3,11 +3,12 @@ import Head from 'next/head'
 import React, {useState } from 'react'
 import { homePageStaticData } from '../../page-content/home-page/homePageStaticData'
 import { getProfile } from '../../github/gitHubApi'
-// import { profileData } from "../../page-content/dummyContent/profile.js"
 import HeaderForProfile from '../../components/HeaderForProfile'
 import { getMaxUsedLanguage } from '../../utils'
 import ProfileInfo from '../../components/ProfileInfo'
 import RepoContainer from '../../components/RepoContainer'
+import ArrowDown from '../../components/ArrowDown'
+// import { profileData } from "../../page-content/dummyContent/profile.js"
 
 interface ProfileProps {
   profileData : {

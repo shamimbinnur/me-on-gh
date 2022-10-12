@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { FC, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import { BiGitRepoForked, BiCode } from 'react-icons/bi'
@@ -56,7 +57,9 @@ const RepoContainer:FC<Props> = ({repoData}) => {
                         currentRepos.map( (repo: any, id: React.Key | null | undefined ) => (
                             <div key={id} className="border-gray-100 bg-white rounded-md p-3 border-[1px]">
                                 <div>
-                                    <h1 className="uppercase text-md font-semibold text-secondary">{repo.name}</h1>
+                                    <Link href={repo.html_url} >
+                                        <h1 className="uppercase cursor-pointer text-md font-semibold text-secondary">{repo.name}</h1>
+                                    </Link>
 
                                     <div className="flex flex-wrap mt-2 mb-4 items-center gap-x-4">
                                         {
