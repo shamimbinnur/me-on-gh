@@ -7,17 +7,9 @@ const homePageStaticData = {
     },
     headerNav: [
         {   
-            placeholder: "About",
+            placeholder: "GitHub",
             link: "#"
-        },
-        {
-            placeholder: "Doc",
-            link: "#"
-        },
-        {
-            placeholder: "Privacy and Policy",
-            link: "#"
-        },            
+        },       
     ]
     ,
     hero:{

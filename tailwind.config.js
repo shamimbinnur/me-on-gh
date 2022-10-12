@@ -22,10 +22,16 @@ module.exports = {
         primaryOne: '#F46A6A',
         primaryTwo: '#00BCD4',
         secondary: '#1D2736',
-        cyanDim: '#F8FEFF'
+        cyanDim: '#F8FEFF',
+        primary: "#794D9A",
+        secondary: "#023047",
+        secondaryWhite: "#CFDBD5",
+        bgWhite: "#F6F8FB",
+
       },
       fontFamily: {
         primary: ['Poppins', 'Tahoma', 'sans-serif'],
+        manrope: ['Manrope', 'sans-serif'],
         secondary:
           'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
       },

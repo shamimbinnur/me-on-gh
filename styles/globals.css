@@ -10,7 +10,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-  @apply bg-white;
+  @apply bg-white font-manrope;
 }
 
 * {

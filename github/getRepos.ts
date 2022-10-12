@@ -81,7 +81,7 @@ const getLanguaseBasedRepo = (repo: []) => {
 
         },
         {
-            lang: "Css",
+            lang: "CSS",
             count: css,
 
         },
