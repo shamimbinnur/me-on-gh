@@ -1,4 +1,4 @@
-# This is repo I got inspiration from ❤️
+# This is the repo I got inspiration from ❤️
 https://github.com/resume/resume.github.com
 
 ##
