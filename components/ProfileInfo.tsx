@@ -5,6 +5,7 @@ import DoughnutChart from './DoughnutChart'
 import ProfilePdf from './ProfilePdf'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { AiOutlineLink } from 'react-icons/ai'
+import { motion } from "framer-motion"
 
 interface Props {
   profileData : {
@@ -74,10 +75,13 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
             <div className="bg-white min-w-0 tablet:min-w-[400px] rounded-xl border-[1px] flex-1 p-5 border-gray-100">
               <div className="flex justify-end">
                 <CopyToClipboard text={`https://meongh.com/${login}`}>
-                    <div className="flex items-center gap-x-2 cursor-pointer">
+                    <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="flex items-center gap-x-2 cursor-pointer">
                       <AiOutlineLink/>
                       <p className="font-bold text-sm text-primary transition-all hover:text-blue-500" >Get Url</p>
-                    </div>
+                    </motion.div>
                 </CopyToClipboard>
               </div>
               <div className="flex items-center justify-center">

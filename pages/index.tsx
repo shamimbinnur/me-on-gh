@@ -1,14 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Feature from '../components/Feature'
-import Footer from '../components/Footer'
-import BelowFooter from '../components/BelowFooter'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import { homePageStaticData } from '../page-content/home-page/homePageStaticData'
-import SignIn from '../components/modals/SignIn'
 import { useState } from 'react'
 import CTA from '../components/CTA'
+import ArrowDown from '../components/ArrowDown'
 
 type navs= [
     {
@@ -75,17 +72,12 @@ const Home: NextPage = () => {
         <meta property="twitter:description" content={homePageStaticData.seo.metaDesc} />
         <meta property="twitter:image" content={homePageStaticData.seo.image} />
       </Head>
-
-      <SignIn state={{showSignInModal, setShowSignInModal}} />
       
       <div className='mobile:px-[5px] tablet:px-[30px] mx-auto max-w-7xl lapto:px-[10px]'>
         <Header navs={homePageStaticData.headerNav as navs || []} />
         <Hero heroData={homePageStaticData.hero as unknown as hero || {}} />
+        <ArrowDown/>
         <CTA/>
-
-        {/* <Feature features={ homePageStaticData.feature as features || [] }/> */}
-
-        {/* <Footer footer={ homePageStaticData.footer as footer || [] } /> */}
       </div>
     </div>
   )
