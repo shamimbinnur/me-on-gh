@@ -32,10 +32,10 @@ const Hero:FC<HeroProps> = ({heroData})=> {
             <div className="max-w-md">
                 <h1 className="font-semibold text-5xl leading-tight text-secondary mb-6">{heroData.title.firstPart} <span className="text-primary">{heroData.title.secondPart}</span></h1>
 
-                <p className="text-lg text-secondary">{heroData.subTitle.firstPart}</p>
+                <p className="text-lg tracking-normal text-secondary">{heroData.subTitle.firstPart}</p>
 
             </div>
-            <div className="relative px-16">
+            <div className="relative transition-all px-16">
                 <div className="max-w-md">
                     <Image src={heroPhoto} />
                 </div>
