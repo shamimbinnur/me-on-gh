@@ -37,7 +37,7 @@ const Hero:FC<HeroProps> = ({heroData})=> {
             </div>
             <div className="relative flex bg-blacks items-center justify-center transition-all desktop:px-16">
                 <div className="max-w-md">
-                    <Image src={heroPhoto} />
+                    <Image alt="MOGH" priority src={heroPhoto} />
                 </div>
 
             </div>
