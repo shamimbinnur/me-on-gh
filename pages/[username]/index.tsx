@@ -96,9 +96,11 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
         <meta property="twitter:description" content={bio} />
         <meta property="twitter:image" content={homePageStaticData.seo.url} />
         </Head>
-        <HeaderForProfile/>
-        <ProfileInfo profileData={profileData} />
-        <RepoContainer repoData={{popularRepos, repos, languageBasedRepo}}/>
+        <div className="max-w-7xl mx-auto">
+          <HeaderForProfile/>
+          <ProfileInfo profileData={profileData} />
+          <RepoContainer repoData={{popularRepos, repos, languageBasedRepo}}/>
+        </div>
     </div>
   )
 }
