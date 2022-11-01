@@ -8,7 +8,7 @@ import { getMaxUsedLanguage } from '../../utils'
 import ProfileInfo from '../../components/ProfileInfo'
 import RepoContainer from '../../components/RepoContainer'
 import ArrowDown from '../../components/ArrowDown'
-// import { profileData } from "../../page-content/dummyContent/profile.js"
+import { profileData } from "../../page-content/dummyContent/profile.js"
 
 interface ProfileProps {
   profileData : {
@@ -95,16 +95,16 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
         <meta property="twitter:title" content={name} />
         <meta property="twitter:description" content={bio} />
         <meta property="twitter:image" content={homePageStaticData.seo.url} />
-      </Head>
-      <HeaderForProfile/>
-      <ProfileInfo profileData={profileData} />
-      <RepoContainer repoData={{popularRepos, repos, languageBasedRepo}}/>
+        </Head>
+        <HeaderForProfile/>
+        <ProfileInfo profileData={profileData} />
+        <RepoContainer repoData={{popularRepos, repos, languageBasedRepo}}/>
     </div>
   )
 }
 
 export async function getServerSideProps(context: any) {
-  const profileData = await getProfile(context.params.username)
+  // const profileData = await getProfile(context.params.username)
 
   return {
     props: {
