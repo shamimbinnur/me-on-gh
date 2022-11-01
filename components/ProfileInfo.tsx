@@ -67,9 +67,9 @@ const ProfileInfo:FC <Props> = ({profileData}) => {
   const filteredLBR = languageBasedRepo.filter( item => item.count > 0)
 
   return (
-    <div className='p-4 tablet:p-10'>
+    <div className='p-4 tablet:p-10 '>
         {/* Profile Info cotainer */}
-        <div className="bg-bgWhite py-5 px-5 tablet:px-5 rounded-xl">
+        <div className="bg-bgWhite py-5 px-5 tablet:px-5 border border-primary border-opacity-10 rounded-xl">
           <div className="flex flex-col flex-wrap tablet:flex-row gap-6">
             {/* Left portion */}
             <div className="bg-white min-w-0 tablet:min-w-[400px] rounded-xl border-[1px] flex-1 p-5 border-gray-100">

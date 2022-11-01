@@ -8,7 +8,7 @@ const homePageStaticData = {
     headerNav: [
         {   
             placeholder: "GitHub",
-            link: "#"
+            link: "https://github.com/shamimbinnur/me-on-gh"
         },       
     ]
     ,

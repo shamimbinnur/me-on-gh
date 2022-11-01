@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React, { FC } from 'react'
 import MOG from '../public/svg/MOGH-logo.svg'
 import MOG_text from '../public/svg/MOG-text.svg'
-import deco from '../public/svg/deco.svg'
 import Link from 'next/link'
 
 interface HeaderProps{
@@ -16,9 +15,9 @@ interface HeaderProps{
 
 const Header:FC<HeaderProps> = ({navs}) => {
   return (
-    <div className='relative mx-auto'>        
+    <div className='relative px-6 mx-auto'>        
         <div className='flex items-center justify-between  '>
-            <div className='flex gapx-x-2 items-center'>
+            <div className='flex gap-x-2 items-center'>
                 <div className='flex justify-center w-[50px] h-[50px] tablet:w-[60px] tablet:h-[60px]'>
                     <Image src={MOG} width={50} height={50} alt="MOG Logo" />
                 </div>
