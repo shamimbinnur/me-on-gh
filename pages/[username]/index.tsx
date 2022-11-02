@@ -8,6 +8,7 @@ import { getMaxUsedLanguage } from '../../utils'
 import ProfileInfo from '../../components/ProfileInfo'
 import RepoContainer from '../../components/RepoContainer'
 import ArrowDown from '../../components/ArrowDown'
+import ProfileSEO from '../../components/SEO/ProfileSEO'
 // import { profileData } from "../../page-content/dummyContent/profile.js"
 
 interface ProfileProps {
