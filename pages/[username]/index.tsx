@@ -8,8 +8,7 @@ import { getMaxUsedLanguage } from '../../utils'
 import ProfileInfo from '../../components/ProfileInfo'
 import RepoContainer from '../../components/RepoContainer'
 import ArrowDown from '../../components/ArrowDown'
-import { profileData } from "../../page-content/dummyContent/profile.js"
-import ProfileSEO from '../../components/SEO/ProfileSEO'
+// import { profileData } from "../../page-content/dummyContent/profile.js"
 
 interface ProfileProps {
   profileData : {
@@ -89,7 +88,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 }
 
 export async function getServerSideProps(context: any) {
-  // const profileData = await getProfile(context.params.username)
+  const profileData = await getProfile(context.params.username)
 
   return {
     props: {
