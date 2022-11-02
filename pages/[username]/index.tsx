@@ -9,8 +9,8 @@ import ProfileInfo from '../../components/ProfileInfo'
 import RepoContainer from '../../components/RepoContainer'
 import ArrowDown from '../../components/ArrowDown'
 import ProfileSEO from '../../components/SEO/ProfileSEO'
-import { Background_Home } from '../../components/Background_Home'
-
+import Background_Profile from '../../components/Background_Profile'
+import { profileData } from "../../page-content/dummyContent/profile.js"
 
 interface ProfileProps {
   profileData : {
@@ -80,19 +80,19 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
   return (
     <>
         <ProfileSEO homePageStaticData={homePageStaticData} bio={bio} name={name}  />
-        <Background_Home>
-          <div className="max-w-7xl mx-auto">
+        <Background_Profile>
+          <div className="max-w-7xl mx-auto min-h-screen">
             <HeaderForProfile/>
             <ProfileInfo profileData={profileData} />
             <RepoContainer repoData={{popularRepos, repos, languageBasedRepo}}/>
           </div>
-        </Background_Home>
+        </Background_Profile>
     </>
   )
 }
 
 export async function getServerSideProps(context: any) {
-  const profileData = await getProfile(context.params.username)
+  // const profileData = await getProfile(context.params.username)
 
   return {
     props: {
