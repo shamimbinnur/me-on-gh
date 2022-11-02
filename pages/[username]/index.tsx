@@ -10,7 +10,7 @@ import RepoContainer from '../../components/RepoContainer'
 import ArrowDown from '../../components/ArrowDown'
 import ProfileSEO from '../../components/SEO/ProfileSEO'
 import Background_Profile from '../../components/Background_Profile'
-import { profileData } from "../../page-content/dummyContent/profile.js"
+// import { profileData } from "../../page-content/dummyContent/profile.js"
 
 interface ProfileProps {
   profileData : {
@@ -92,7 +92,7 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
 }
 
 export async function getServerSideProps(context: any) {
-  // const profileData = await getProfile(context.params.username)
+  const profileData = await getProfile(context.params.username)
 
   return {
     props: {
