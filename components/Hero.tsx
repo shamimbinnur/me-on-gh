@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
 import artwork from '../public/svg/artwork.svg'
-import heroPhoto from '../public/svg/hero-photo.svg'
+import heroPhoto from '../public/svg/hero-photo.png'
 
 interface HeroProps{
     heroData: {
@@ -42,12 +42,6 @@ const Hero:FC<HeroProps> = ({heroData})=> {
 
             </div>
         </div>
-
-        <div className="w-1 bg-gradient-to-b leading-tight tracking-wide rounded-tl-md rounded-bl-md from-primary to-secondary">
-
-        </div>
-
-        
     </div>
   )
 }
