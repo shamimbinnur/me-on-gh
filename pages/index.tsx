@@ -5,7 +5,7 @@ import { homePageStaticData } from '../page-content/home-page/homePageStaticData
 import CTA from '../components/CTA'
 import ArrowDown from '../components/ArrowDown'
 import HomeSEO from '../components/SEO/HomeSEO'
-import { Background_Home } from '../components/Background_Home'
+import Background_Home from '../components/Background_Home'
 
 type navs= [
     {

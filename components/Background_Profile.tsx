@@ -9,24 +9,24 @@ import _2_rText from '../public/svg/background/_2_rText.svg'
 interface Props {
     children: React.ReactNode,
 }
-export const Background_Home:FC<Props> = ({children}) => {
+export const Background_Profile:FC<Props> = ({children}) => {
   return (
     <div className="relative h-fit overflow-hidden">
-        <div className="absolute -top-[30rem] -right-[15rem]">
+        <div className="absolute -top-[30rem] -left-[15rem]">
             <Image alt="Stroke" src={radial} />
         </div>
-        <div className="absolute -top-[4rem] -right-[5rem]">
+        {/* <div className="absolute -top-[4rem] -right-[5rem]">
             <Image alt="Stroke" src={_1_rStroke} />
-        </div>
+        </div> */}
         <div className="absolute top-[5rem] -right-[10rem]">
             <Image alt="Stroke" src={_1_rText} />
         </div>
         <div className="absolute top-[50rem] -left-[15rem]">
             <Image alt="Stroke" src={_2_lText} />
         </div>
-        <div className="absolute top-[50rem] -right-10">
+        {/* <div className="absolute top-[50rem] -right-10">
             <Image alt="Stroke" src={_2_rText} />
-        </div>
+        </div> */}
 
         <div className="relative">
             {children}
@@ -35,4 +35,4 @@ export const Background_Home:FC<Props> = ({children}) => {
   )
 }
 
-export default Background_Home
+export default Background_Profile
