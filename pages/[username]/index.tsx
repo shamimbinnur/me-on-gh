@@ -10,6 +10,7 @@ import RepoContainer from '../../components/RepoContainer'
 import ArrowDown from '../../components/ArrowDown'
 import { profileData } from "../../page-content/dummyContent/profile.js"
 import ProfileSEO from '../../components/SEO/ProfileSEO'
+import { Background_Home } from '../../components/Background_Home'
 
 interface ProfileProps {
   profileData : {
@@ -79,11 +80,13 @@ const App: NextPage<ProfileProps>= ({profileData}) => {
   return (
     <>
         <ProfileSEO homePageStaticData={homePageStaticData} bio={bio} name={name}  />
-        <div className="max-w-7xl mx-auto">
-          <HeaderForProfile/>
-          <ProfileInfo profileData={profileData} />
-          <RepoContainer repoData={{popularRepos, repos, languageBasedRepo}}/>
-        </div>
+        <Background_Home>
+          <div className="max-w-7xl mx-auto">
+            <HeaderForProfile/>
+            <ProfileInfo profileData={profileData} />
+            <RepoContainer repoData={{popularRepos, repos, languageBasedRepo}}/>
+          </div>
+        </Background_Home>
     </>
   )
 }
