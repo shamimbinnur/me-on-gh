@@ -1,4 +1,8 @@
-# This is the repo I got inspiration from ❤️
+<img width="1438" alt="Screenshot 2022-11-04 at 4 03 40 PM" src="https://user-images.githubusercontent.com/48399373/199946858-27515f6b-f712-4bff-aac3-aa4ce62526c0.png">
+
+<img width="1438" alt="Screenshot 2022-11-04 at 4 04 01 PM" src="https://user-images.githubusercontent.com/48399373/199946780-79b5725a-9ff5-41b4-8778-cf1c630a53ed.png">
+
+## This is the repo I got inspiration from ❤️
 https://github.com/resume/resume.github.com
 
 ##
